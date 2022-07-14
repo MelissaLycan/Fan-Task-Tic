@@ -1,42 +1,32 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Schema, model, Model } = require("mongoose");
 
-class Pricing extends Model {}
-
-Pricing.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    cost: {
-      type: DataTypes.DECIMAL(18, 2),
-      allowNull: false,
-    },
-    sales_price: {
-      type: DataTypes.DECIMAL(18, 2),
-      allowNull: false,
-    },
-    order_link: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    inventory_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "inventory",
-        key: "id",
-      },
+const priceSchema = new Model({
+  id: {
+    type: Number,
+    required: true,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  cost: {
+    type: Schema.Types.Decimal128,
+    required: true,
+  },
+  sales_price: {
+    type: Schema.Types.Decimal128,
+    required: true,
+  },
+  order_link: {
+    type: String,
+    required: false,
+  },
+  inventory_id: {
+    type: Number,
+    references: {
+      model: "inventory",
+      key: "id",
     },
   },
-  {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "pricing",
-  }
-);
+});
 
+const Pricing = model("Pricing", priceSchema);
 module.exports = Pricing;

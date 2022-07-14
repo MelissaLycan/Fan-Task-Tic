@@ -1,36 +1,26 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Schema, model } = require("mongoose");
 
-class Inventory extends Model {}
-
-Inventory.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    image_file: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    current_stock: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0,
-    },
+const invSchema = new Schema({
+  id: {
+    type: Number,
+    required: true,
+    unique: true,
+    autoIncrement: true,
   },
-  {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "inventory",
-  }
-);
+  name: {
+    type: String,
+    required: true,
+  },
+  image_file: {
+    type: String,
+    required: true,
+  },
+  current_stock: {
+    type: Number,
+    required: false,
+    defaultValue: 0,
+  },
+});
 
+const Inventory = model("Inventory", invSchema);
 module.exports = Inventory;
