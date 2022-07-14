@@ -1,0 +1,123 @@
+* {
+    font-family: sans;
+}
+
+header {
+    color: rgb(250, 247, 247);
+    background-color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body {
+    background-color: black;
+    color: white;
+}
+.search {
+    border: solid 2px black;
+}
+#socialBtn {
+    background-color: none;
+    border: none;
+    width: 25%;
+}
+
+#searchBtn {
+    border-radius: 12px;
+    background-color: rgb(11, 163, 239);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(250, 247, 247);
+    padding: 2px 24px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1, h2, h5 {
+    filter: drop-shadow(4px 4px 4px rgb(11, 163, 239));
+}
+
+#stageName, #fanCount {
+    filter: drop-shadow(6px 6px 6px white);
+}
+
+h2 {
+    color: white;
+    margin-top: 20px;
+}
+#stageName {
+    width: 50%;
+    font-size: 50px;
+    color: black;
+}
+#fanCount {
+    font-size: 20px;
+    color: black;
+    
+}
+
+#artist-search {
+    font-style: bold;
+    font-size: 16px;
+}
+
+.music-container {
+    width: 50%;
+    min-width: 100%;
+    max-width: 100%;
+    /* min-height: 60%;
+    max-height: 60%; */
+}
+
+#eventContainer {
+    background-color: rgb(6, 6, 6);
+    color:white;
+    width: 50%;
+    min-width: 50%;
+    min-height: 50%;
+    border-radius: 15px 15px 15px 15px;
+    margin-right: 15px;
+}
+
+.event-container-img {
+    width: 100%;
+    min-width: 250px;
+    min-height: 250px;
+}
+
+#placeholderSpotify {
+    width: 50%;
+}
+
+img {
+    height: 40px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+footer {
+    background-color: black;
+    color: rgb(250, 247, 247);
+}
+
+#spotifyContainer {
+    height: fit-content;
+}
+
+
+@media screen and (max-width: 720px){
+    #apiContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #eventContainer {
+        /* background-color: rgb(3, 3, 3); */
+        width: 100%;
+        margin: 2%;
+    }
+
+    #spotifyContainer {
+        width: 100%;
+    }
+
+    
+}
