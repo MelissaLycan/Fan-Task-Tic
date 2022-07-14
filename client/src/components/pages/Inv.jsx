@@ -1,18 +1,19 @@
 // TODO: refactor inv code here
 
+// import React from "react";
+
+return (
 <main>
-    <h2 class="logInMsg">Merchandise Inventory</h2>
+    <h1 class="logInMsg">Merchandise Inventory</h1>
     <div>
         <div class="tablediv">
-            {/* <!-- BUTTON TO ACTIVATE ADD INVENTORY MODAL --> */}
+            {/* <!-- Button to activate modal --> */}
             <button
                 data-target="modalAddInv"
-                class="btn addbtn modal-trigger waves-effect waves-light btn-large"
-            >
-                <i class="material-icons left">create</i>
+                class="btn addbtn modal-trigger waves-effect waves-light btn-large">
                 Add Item
             </button>
-            {/* MODAL */}
+            {/* Modal */}
             <div id="modalAddInv" class="modal">
                 <div class="modal-content">
                     <h4>Add to Inventory</h4>
@@ -74,8 +75,8 @@
                                     <div class="modal-footer">
                                         <button
                                             class="addbtn modal-close waves-effect waves-light btn-large"
-                                            href="#!"
-                                        ><i class="material-icons left">create</i>Add Item
+                                            href="#!">
+                                        Add Item
                                         </button>
                                     </div>
                                 </div>
@@ -85,7 +86,7 @@
                 </div>
             </div>
 
-            {/* {{!-- update modal --}} */}
+            {/* {{!-- Update modal --}} */}
             <div id="modalUpdateInv" class="modal">
                 <div class="modal-content">
                     <h4>Update Item</h4>
@@ -147,9 +148,8 @@
                                     <div class="modal-footer">
                                         <button
                                             class="addbtn modal-close waves-effect waves-light btn-large"
-                                            href="#!"
-                                        ><i class="material-icons left">create</i
-                                        >Update Item
+                                            href="#!">
+                                        Update Item
                                         </button>
                                     </div>
                                 </div>
@@ -159,7 +159,7 @@
                 </div>
             </div>
 
-            {/* <!-- INVENTORY TABLE --> */}
+            {/* <!-- Inventory table --> */}
             <table class="highlight">
                 <thead>
                     <tr>
@@ -170,9 +170,10 @@
                 </thead>
 
                 <tbody>
-                    {{> invRow}}
+                    { invRow}
                 </tbody>
             </table>
         </div>
     </div>
 </main>
+)
