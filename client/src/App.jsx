@@ -1,17 +1,15 @@
 import "./pages/login.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/login";
+import Container from "./components/Container";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        {/* <header className="App-header"></header> */}
-        <Routes>
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <div>
+      <Header />
+      <Container />
+      <Footer />
+    </div>
   );
 }
 
