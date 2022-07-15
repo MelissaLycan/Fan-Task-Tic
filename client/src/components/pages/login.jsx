@@ -5,6 +5,7 @@ export default function (props) {
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
+    sessionStorage.setItem("status", "loggedIn");
   };
 
   if (authMode === "signin") {
