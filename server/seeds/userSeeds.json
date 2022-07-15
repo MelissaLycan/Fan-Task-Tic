@@ -1,0 +1,49 @@
+[
+  {
+    "first_name": "Melissa",
+    "last_name": "Lycan",
+    "admin": true,
+    "email": "melissamlycan@gmail.com",
+    "username": "MelissaLycan",
+    "password": "password",
+    "isBand": true,
+    "bandDetails": {
+      "bandName": "nordicdaughter",
+      "members": [{}]
+
+    }
+    
+  },
+  {
+    "first_name": "Joel",
+    "last_name": "Rodgers",
+    "admin": true,
+    "email": "caseysmiller@yahoo.com",
+    "username": "JoelRodgers",
+    "password": "password"
+  },
+  {
+    "first_name": "Sheri",
+    "last_name": "Brown",
+    "admin": true,
+    "email": "",
+    "username": "SheriBrown",
+    "password": "password"
+  },
+  {
+    "first_name": "Wren",
+    "last_name": "Sanchez",
+    "admin": true,
+    "email": "wrensanchez@gmail.com",
+    "username": "WrenSanchez",
+    "password": "password"
+  },
+  {
+    "first_name": "Keith",
+    "last_name": "MacNeil",
+    "admin": false,
+    "email": "",
+    "username": "KMac2022",
+    "password": "password"
+  }
+]
