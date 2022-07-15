@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const invSchema = new Schema({
   id: {
-    type: Number,
+    type: Schema.Types.ObjectId,
     required: true,
     unique: true,
     autoIncrement: true,
