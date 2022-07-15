@@ -142,9 +142,17 @@
       {
         "first_name": "Keith",
         "last_name": "MacNeil",
-        "admin": false,
+        "admin": true,
         "email": "",
         "username": "KMac2022",
+        "password": "password"
+      },
+      {
+        "first_name": "Ben",
+        "last_name": "Machock",
+        "admin": true,
+        "email": "",
+        "username": "Bmacho",
         "password": "password"
       }
 ]
