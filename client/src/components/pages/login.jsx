@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import "./login.css";
 
 export default function (props) {
   let [authMode, setAuthMode] = useState("signin");
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
+    sessionStorage.setItem("status", "loggedIn");
   };
 
   if (authMode === "signin") {
