@@ -9,7 +9,25 @@
     "isBand": true,
     "bandDetails": {
       "bandName": "nordicdaughter",
-      "members": [{}]
+      "website":"https://www.nordicdaughter.com",
+      "spotify": String,
+    "bandsintown": String,
+    "members": [
+      {
+        "name": "Melissa Lycan",
+        "instrument": "Vocals",
+        "image": "./images/melissalycan.jpg"
+      }
+    ],
+    "social": [
+      { "facebook": String },
+      { "instagram": String },
+      { "tiktok": String },
+      { "twitter": String },
+      { "youtube": String },
+    ],
+    "inventory": [],
+    "tasks": []
 
     }
     
