@@ -7,14 +7,14 @@ function Header() {
     // DB query to find relevant info
     return (
       <nav className="navbar nuStyle sticky-top w-50">
-        <div className="container">
+        <div className="container d-inline-flex">
           <div className="row align-items-center justify-content-evenly">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="currentColor"
-              className="bi bi-heart-pulse-fill"
+              className="bi bi-heart-pulse-fill col"
               viewBox="0 0 16 16"
             >
               <path
@@ -37,15 +37,15 @@ function Header() {
   } else {
     // DB query to find random band and pull relevant info
     return (
-      <nav className="navbar nuStyle sticky-top w-50">
-        <div className="container">
+      <nav className="navbar nuStyle sticky-top w-50 d-flex">
+        <div className="container flex-row">
           <div className="row align-items-center justify-content-evenly">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="currentColor"
-              className="bi bi-heart-pulse-fill"
+              className="bi bi-heart-pulse-fill col"
               viewBox="0 0 16 16"
             >
               <path
