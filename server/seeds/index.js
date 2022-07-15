@@ -1,7 +1,21 @@
 const seedInventory = require("./inventory_seeds");
 const seedUsers = require("./users_seeds");
 const seedPricing = require("./pricing_seeds");
-const sequelize = require("../config/connection");
+const db = require("../config/connection");
+const { Profile } = require("../models");
+const profileSeeds = require("./profileSeeds.json");
+
+db.once("open", async () => {
+  try {
+    await Profile.deleteMany({});
+    await Profile.create(profileSeeds);
+
+    console.log("all done!");
+    process.exit(0);
+  } catch (err) {
+    throw err;
+  }
+});
 
 const { Inventory, Users, Pricing } = require("../models");
 
