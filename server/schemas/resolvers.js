@@ -111,39 +111,40 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     updateUser: async (parent, args, context) => {
-      if (context.User.findByIdAndUpdate(context.user._id, args, {
+      if (
+        context.User.findByIdAndUpdate(context.user._id, args, {
           new: true,
-        }));
-      },
-
+        })
+      );
       throw new AuthenticationError("Not logged in");
     },
-    updateInventory: async (parent, { _id, quantity }) => {
-      const decrement = Math.abs(quantity) * -1;
+  },
+  updateInventory: async (parent, { _id, quantity }) => {
+    const decrement = Math.abs(quantity) * -1;
 
-      return await Inventory.findByIdAndUpdate(
-        _id,
-        { $inc: { quantity: decrement } },
-        { new: true }
-      );
-    },
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    return await Inventory.findByIdAndUpdate(
+      _id,
+      { $inc: { quantity: decrement } },
+      { new: true }
+    );
+  },
+  login: async (parent, { email, password }) => {
+    const user = await User.findOne({ email });
 
-      if (!user) {
-        throw new AuthenticationError("Incorrect credentials");
-      }
+    if (!user) {
+      throw new AuthenticationError("Incorrect credentials");
+    }
 
-      const correctPw = await user.isCorrectPassword(password);
+    const correctPw = await user.isCorrectPassword(password);
 
-      if (!correctPw) {
-        throw new AuthenticationError("Incorrect credentials");
-      }
+    if (!correctPw) {
+      throw new AuthenticationError("Incorrect credentials");
+    }
 
-      const token = signToken(user);
+    const token = signToken(user);
 
-      return { token, user };
-    },
-  };
+    return { token, user };
+  },
+};
 
 module.exports = resolvers;
