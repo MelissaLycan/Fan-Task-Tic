@@ -12,12 +12,10 @@ import ShopItem from "./pages/ShopItem";
 import Shop from "./pages/Shop";
 
 export default function Container() {
-  <BrowserRouter>
-    <div className="App">
-      {/* <header className="App-header"></header> */}
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/Band/:bandId" element={<Band />} />
+  return (
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      {/* <Route path="/Band/:bandId" element={<Band />} />
         <Route path="/User" element={<User />} />
         <Route path="/User/Band" element={<BandUser />} />
         <Route path="/User/Admin" element={<AdminUser />} />
@@ -25,8 +23,7 @@ export default function Container() {
         <Route path="/User/Band/Merchandise" element={<Merch />} />
         <Route path="/Band/:bandId/Shop/Cart" element={<Cart />} />
         <Route path="/Band/:bandId/Shop/:itemId" element={<ShopItem />} />
-        <Route path="/Band/:bandId/Shop" element={<Shop />} />
-      </Routes>
-    </div>
-  </BrowserRouter>;
+        <Route path="/Band/:bandId/Shop" element={<Shop />} /> */}
+    </Routes>
+  );
 }
