@@ -4,6 +4,11 @@
 
 // TODO: JS function to create new inventory item in database
 
+export default function InvList()
+    // Needs custom hook
+
+    // need utils with queries and mutations, typedefs and resolvers, apollo connection
+
 return (
     <div>
         <h1 className="logInMsg">Merchandise Inventory</h1>
@@ -22,7 +27,7 @@ return (
                     <div className="modal-content">
                         <h4>Add to Inventory</h4>
 
-                        {arrayname.map((prop, key) => {
+                        {inventory.map((prop, key) => {
                             return (
                                 <div className="row">
                                     <form id="add-item-form" class="col s12">
