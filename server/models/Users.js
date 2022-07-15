@@ -45,8 +45,50 @@ const userSchema = new Schema({
       { twitter: String },
       { youtube: String },
     ],
-    inventory: [],
-    tasks: [],
+    inventory: [
+      {
+        id: {
+          type: Number,
+          required: true,
+          unique: true,
+          autoIncrement: true,
+        },
+        name: {
+          type: String,
+          required: true,
+        },
+        image_file: {
+          type: String,
+          required: true,
+        },
+        current_stock: {
+          type: Number,
+          required: false,
+          defaultValue: 0,
+        },
+      },
+    ],
+    tasks: [
+      {
+        name: {
+          type: String,
+          trim: true,
+        },
+        platform: {
+          type: String,
+          required: true,
+        },
+        complete: {
+          type: Boolean,
+        },
+        actionValue: {
+          type: Number,
+        },
+        input: {
+          type: input,
+        },
+      },
+    ],
   },
   email: {
     type: String,
@@ -69,12 +111,23 @@ const userSchema = new Schema({
   },
   actions: [
     {
-      type: String,
-      trim: true,
-      platform: String,
-      complete: Boolean,
-      actionValue: Number,
-      link: String,
+      name: {
+        type: String,
+        trim: true,
+      },
+      platform: {
+        type: String,
+        required: true,
+      },
+      complete: {
+        type: Boolean,
+      },
+      actionValue: {
+        type: Number,
+      },
+      link: {
+        type: String,
+      },
     },
   ],
   points: [
