@@ -12,12 +12,11 @@ import ShopItem from "./pages/ShopItem";
 import Shop from "./pages/Shop";
 
 export default function Container() {
-<<<<<<< HEAD
-  <>
-    {/* <header className="App-header"></header> */}
-=======
+  {
+    /* <header className="App-header"></header> */
+  }
+
   return (
->>>>>>> 08c69403dbaa25d085903db6be1f4e333dd68f35
     <Routes>
       <Route path="/login" element={<Login />} />
       {/* <Route path="/Band/:bandId" element={<Band />} />
@@ -30,9 +29,5 @@ export default function Container() {
         <Route path="/Band/:bandId/Shop/:itemId" element={<ShopItem />} />
         <Route path="/Band/:bandId/Shop" element={<Shop />} /> */}
     </Routes>
-<<<<<<< HEAD
-  </>;
-=======
   );
->>>>>>> 08c69403dbaa25d085903db6be1f4e333dd68f35
 }
