@@ -1,6 +1,6 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Model } = require("mongoose");
 
-const userSchema = new Schema({
+const userSchema = new Model({
   id: {
     type: Schema.Types.ObjectId,
     required: true,
@@ -33,22 +33,41 @@ const userSchema = new Schema({
     bandsintown: String,
     members: [
       {
-        name: String,
-        instrument: String,
-        image: String,
+        name: {
+          type: String,
+        },
+        instrument: {
+          type: String,
+        },
+        image: {
+          type: String,
+        },
       },
     ],
-    social: [
-      { facebook: String },
-      { instagram: String },
-      { tiktok: String },
-      { twitter: String },
-      { youtube: String },
+    socialLinks: [
+      {
+        facebook: {
+          type: String,
+          required: true,
+        },
+        instagram: {
+          type: String,
+        },
+        tiktok: {
+          type: String,
+        },
+        twitter: {
+          type: String,
+        },
+        youtube: {
+          type: String,
+        },
+      },
     ],
     inventory: [
       {
-        id: {
-          type: Number,
+        inventory_id: {
+          type: Schema.Types.ObjectId,
           required: true,
           unique: true,
           autoIncrement: true,
@@ -56,6 +75,18 @@ const userSchema = new Schema({
         name: {
           type: String,
           required: true,
+        },
+        cost: {
+          type: Schema.Types.Decimal128,
+          required: true,
+        },
+        sales_price: {
+          type: Schema.Types.Decimal128,
+          required: true,
+        },
+        order_link: {
+          type: String,
+          required: false,
         },
         image_file: {
           type: String,
@@ -85,7 +116,7 @@ const userSchema = new Schema({
           type: Number,
         },
         input: {
-          type: input,
+          type: String,
         },
       },
     ],
@@ -138,5 +169,5 @@ const userSchema = new Schema({
   ],
 });
 
-const User = model("User", userSchema);
-module.exports = User;
+const Users = model("User", userSchema);
+module.exports = Users;
