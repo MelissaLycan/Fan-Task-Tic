@@ -1,12 +1,6 @@
 const { Schema, model } = require("mongoose");
 
 const invSchema = new Schema({
-  id: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    unique: true,
-    autoIncrement: true,
-  },
   name: {
     type: String,
     required: true,
@@ -20,7 +14,19 @@ const invSchema = new Schema({
     required: false,
     defaultValue: 0,
   },
+  cost: {
+    type: Schema.Types.Decimal128,
+    required: true,
+  },
+  sales_price: {
+    type: Schema.Types.Decimal128,
+    required: true,
+  },
+  order_link: {
+    type: String,
+    required: false,
+  },
 });
 
 const Inventory = model("Inventory", invSchema);
-module.exports = Inventory;
+module.exports = { Inventory, invSchema };

@@ -2,10 +2,10 @@
   {
     "first_name": "Melissa",
     "last_name": "Lycan",
-    "admin": true,
     "email": "melissamlycan@gmail.com",
     "username": "MelissaLycan",
     "password": "password",
+    "admin": true,
     "isBand": true,
     "bandDetails": {
       "bandName": "nordicdaughter",
@@ -44,7 +44,7 @@
           "image": "./images/JasonSeigel.jpg"
         }
       ],
-      "social": [
+      "socialLinks": [
         { "facebook": "https://www.facebook.com/nordicdaughter" },
         { "instagram": "https://www.instagram.com/" },
         { "tiktok": "https://www.tiktok.com/nordicdaughterofficial" },
@@ -53,7 +53,6 @@
       ],
       "inventory": [
         {
-          "inventory_id": 1,
           "name": "CD: Forgotten",
           "cost": 2.33,
           "sales_price": 9.0,
@@ -62,7 +61,6 @@
           "current_stock": "100"
         },
         {
-          "inventory_id": 2,
           "name": "CD: The Path",
           "cost": 2.33,
           "sales_price": 10.0,
@@ -71,7 +69,6 @@
           "current_stock": "100"
         },
         {
-          "inventory_id": 3,
           "name": "Hoodie",
           "cost": 15.0,
           "sales_price": 50.0,
@@ -80,7 +77,6 @@
           "current_stock": "50"
         },
         {
-          "inventory_id": 4,
           "name": "Shot Glass",
           "cost": 1.54,
           "sales_price": 8.0,
@@ -89,7 +85,6 @@
           "current_stock": "100"
         },
         {
-          "inventory_id": 5,
           "name": "Drinking Horn",
           "cost": 9.67,
           "sales_price": 40,
@@ -98,7 +93,6 @@
           "current_stock": "200"
         },
         {
-          "inventory_id": 6,
           "name": "Rune Set",
           "cost": 3.15,
           "sales_price": 25.0,
@@ -107,7 +101,6 @@
           "current_stock": "25"
         },
         {
-          "inventory_id": 7,
           "name": "Chainmail Necklace",
           "cost": 15,
           "sales_price": 40,
@@ -116,7 +109,6 @@
           "current_stock": "10"
         },
         {
-          "inventory_id": 8,
           "name": "Guitar Pic Earrings",
           "cost": 1.35,
           "sales_price": 20.0,
@@ -125,7 +117,6 @@
           "current_stock": "100"
         },
         {
-          "inventory_id": 9,
           "name": "TShirt: Forgotten",
           "cost": 10.35,
           "sales_price": 35,
@@ -134,7 +125,6 @@
           "current_stock": "100"
         },
         {
-          "inventory_id": 10,
           "name": "TShirt: The Path",
           "cost": 10.35,
           "sales_price": 35,
@@ -149,41 +139,46 @@
   {
     "first_name": "Joel",
     "last_name": "Rogers",
-    "admin": true,
     "email": "jdr.personal@yahoo.com",
     "username": "JoelRogers",
-    "password": "password"
+    "password": "password",
+    "admin": true,
+    "isBand": false
   },
   {
     "first_name": "Sheri",
     "last_name": "Brown",
-    "admin": true,
-    "email": "",
+    "email": "Sheri@none.net",
     "username": "SheriBrown",
-    "password": "password"
+    "password": "password",
+    "admin": true,
+    "isBand": false
   },
   {
     "first_name": "Wren",
     "last_name": "Sanchez",
-    "admin": true,
     "email": "wrensanchez@gmail.com",
     "username": "WrenSanchez",
-    "password": "password"
+    "password": "password",
+    "admin": true,
+    "isBand": false
   },
   {
     "first_name": "Keith",
     "last_name": "MacNeil",
-    "admin": true,
     "email": "riverbatrock@gmail.com",
     "username": "Kmac5000",
-    "password": "password"
+    "password": "password",
+    "admin": true,
+    "isBand": false
   },
   {
     "first_name": "Ben",
     "last_name": "Machock",
-    "admin": true,
-    "email": "",
+    "email": "bmacho@none.net",
     "username": "Bmacho",
-    "password": "password"
+    "password": "password",
+    "admin": true,
+    "isBand": false
   }
 ]
