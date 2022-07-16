@@ -15,15 +15,15 @@ export default function Container() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      {/* <Route path="/Band/:bandId" element={<Band />} />
-        <Route path="/User" element={<User />} />
-        <Route path="/User/Band" element={<BandUser />} />
-        <Route path="/User/Admin" element={<AdminUser />} />
-        <Route path="/User/Band/Inventory" element={<Inv />} />
-        <Route path="/User/Band/Merchandise" element={<Merch />} />
-        <Route path="/Band/:bandId/Shop/Cart" element={<Cart />} />
-        <Route path="/Band/:bandId/Shop/:itemId" element={<ShopItem />} />
-        <Route path="/Band/:bandId/Shop" element={<Shop />} /> */}
+      <Route path="/Band/:bandId" element={<Band />} />
+      <Route path="/User" element={<User />} />
+      <Route path="/User/Band" element={<BandUser />} />
+      <Route path="/User/Admin" element={<AdminUser />} />
+      <Route path="/User/Band/Inventory" element={<Inv />} />
+      <Route path="/User/Band/Merchandise" element={<Merch />} />
+      <Route path="/Band/:bandId/Shop/Cart" element={<Cart />} />
+      <Route path="/Band/:bandId/Shop/:itemId" element={<ShopItem />} />
+      <Route path="/Band/:bandId/Shop" element={<Shop />} />
     </Routes>
   );
 }
