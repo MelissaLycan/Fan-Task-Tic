@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/login";
+import Login from ".//pages/login";
 import { Link } from "react-router-dom";
 import Band from "./pages/Band";
 import AdminUser from "./pages/AdminUser";
@@ -12,6 +12,10 @@ import ShopItem from "./pages/ShopItem";
 import Shop from "./pages/Shop";
 
 export default function Container() {
+  {
+    /* <header className="App-header"></header> */
+  }
+
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
