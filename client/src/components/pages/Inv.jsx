@@ -1,4 +1,5 @@
-// import React from "react";
+import React from "react";
+
 
 // TODO: Database function to pull data and get array
 
