@@ -8,6 +8,7 @@
     "admin": true,
     "isBand": true,
     "bandDetails": {
+      "bandId": 1,
       "bandName": "nordicdaughter",
       "website": "https://www.nordicdaughter.com",
       "spotifyUri": "4rDydOYVgiuL2gu0B1vEZg",
