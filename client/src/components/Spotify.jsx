@@ -1,4 +1,8 @@
 import SpotifyPlayer from 'react-spotify-player';
+import { Routes } from 'react-router-dom';
+import "./Spotify.css"
+
+export const Spotify = () => {
  
 // size may also be a plain string using the presets 'large' or 'compact'
 const size = {
@@ -7,11 +11,20 @@ const size = {
 };
 const view = 'list'; // or 'coverart'
 const theme = 'black'; // or 'white'
+if(isBand === true) {
+const bandData = await this.User.get({bandDetails: {spotifyUri: ""}})
 
+const spotifyUri = `"spotify:artist:${bandData}"`
+
+return <div className="spotify">
 				<SpotifyPlayer
-                    uri="spotify:artist:4rDydOYVgiuL2gu0B1vEZg"
+                    uri={spotifyUri}
                     size={size}
                     view={view}
                     theme={theme}
                     />
-                    
+       </div>             
+}
+}
+
+export default Spotify
