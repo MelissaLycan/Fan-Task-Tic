@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -24,7 +24,10 @@ function Header() {
             </svg>
             <p className="col align-self-center">Placeholder</p>
             <Link to="/Band/:bandId" className="col align-self-center">
-              <img src="Placeholder" alt="Band Image"></img>
+              <img
+                src="../Assets/images/ND With Name 640x640.png"
+                alt="Band Image"
+              ></img>
             </Link>
             <p className="col align-self-center">Profile</p>
             <a className="col align-self-center" href="#">
@@ -55,7 +58,10 @@ function Header() {
             </svg>
             <p className="col align-self-center">???</p>
             <Link to="/Band/:bandId" className="col align-self-center">
-              <img src="Placeholder" alt="Band Image"></img>
+              <img
+                src="/images/ND With Name 640x640.png"
+                alt="Band Image"
+              ></img>
             </Link>
             <p className="col align-self-center">Profile</p>
             <a className="col align-self-center" href="#">
