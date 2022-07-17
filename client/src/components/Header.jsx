@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+
+import Login from "./pages/login";
 
 function Header() {
   if (sessionStorage.getItem("status") != null) {
