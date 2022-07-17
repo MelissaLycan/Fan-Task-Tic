@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,7 +7,6 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Login from ".//pages/login";
-import { Link } from "react-router-dom";
 import Band from "./pages/Band";
 import AdminUser from "./pages/AdminUser";
 import BandUser from "./pages/BandUser";
@@ -47,6 +46,7 @@ export default function Container() {
   return (
     <ApolloProvider client={client}>
       <Routes>
+        {/* <Route path="/" element={<Navigate replace to="/Band/:bandId" />} /> */}
         <Route path="/login" element={<Login />} />
         {/* <Route path="/Band/:bandId" element={<Band />} />
         <Route path="/User" element={<User />} />
