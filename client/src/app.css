@@ -1,3 +1,12 @@
+body {
+  background: rgb(239, 241, 244);
+  background: radial-gradient(
+    circle,
+    rgba(239, 241, 244, 0.4458158263305322) 0%,
+    rgba(4, 4, 119, 0.8575805322128851) 93%
+  );
+}
+
 .App {
   text-align: center;
 }

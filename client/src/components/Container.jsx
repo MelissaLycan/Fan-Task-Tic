@@ -16,6 +16,7 @@ import User from "./pages/User";
 import Cart from "./pages/Cart";
 import ShopItem from "./pages/ShopItem";
 import Shop from "./pages/Shop";
+import Spotify from "./Spotify";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -48,6 +49,7 @@ export default function Container() {
       <Routes>
         {/* <Route path="/" element={<Navigate replace to="/Band/:bandId" />} /> */}
         <Route path="/" element={<Login />} />
+        <Route path="/" element={<Spotify />} />
         {/* <Route path="/Band/:bandId" element={<Band />} />
         <Route path="/User" element={<User />} />
         <Route path="/User/Band" element={<BandUser />} />
