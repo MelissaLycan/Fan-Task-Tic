@@ -1,4 +1,4 @@
-import SpotifyPlayer from 'react-spotify-player';
+import SpotifyPlayer from '../Spotify';
 // import BandsInTown from "../Events.jsx"
 import "./Band.css";
 

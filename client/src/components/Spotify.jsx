@@ -1,8 +1,9 @@
 import SpotifyPlayer from 'react-spotify-player';
-import { Routes } from 'react-router-dom';
+// import { IdGetter } from '@apollo/client';
+import { Route } from 'react-router-dom';
 import "./Spotify.css"
 
-export const Spotify = () => {
+export async function Spotify() {
  
 // size may also be a plain string using the presets 'large' or 'compact'
 const size = {
@@ -11,7 +12,9 @@ const size = {
 };
 const view = 'list'; // or 'coverart'
 const theme = 'black'; // or 'white'
-if(isBand === true) {
+
+const isBand = await Route("/Band:bandId")
+if(isBand === this.bandDetails.bandId) {
 const bandData = await this.User.get({bandDetails: {spotifyUri: ""}})
 
 const spotifyUri = `"spotify:artist:${bandData}"`
