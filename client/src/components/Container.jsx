@@ -11,11 +11,36 @@ import Band from "./pages/Band";
 // import ShopItem from "./pages/ShopItem";
 // import Shop from "./pages/Shop";
 
+const httpLink = createHttpLink({
+  uri: "/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem("id_token");
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 export default function Container() {
-  <BrowserRouter>
-    <div className="App">
-      {/* <header className="App-header"></header> */}
+  {
+    /* <header className="App-header"></header> */
+  }
+
+  return (
+    <ApolloProvider client={client}>
       <Routes>
+        {/* <Route path="/" element={<Navigate replace to="/Band/:bandId" />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/Band/:bandId" element={<Band />} />
         {/* {
@@ -28,6 +53,6 @@ export default function Container() {
         <Route path="/Band/:bandId/Shop/:itemId" element={<ShopItem />} />
         <Route path="/Band/:bandId/Shop" element={<Shop />} /> */}
       </Routes>
-    </div>
-  </BrowserRouter>;
+    </ApolloProvider>
+  );
 }
