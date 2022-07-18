@@ -1,12 +1,7 @@
 const Users = require("./Users");
-const Pricing = require("./Pricing");
 const Item = require("./Items");
 const Order = require("./Order");
 const Category = require("./Category");
-
-Item.hasOne(Pricing, {
-  foreignKey: "item_id",
-});
 
 Item.belongsTo(Users, {
   foreignKey: "item_id",
