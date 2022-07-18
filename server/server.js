@@ -7,7 +7,7 @@ const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 
 const cors = require("cors");
-require("dotenv").config({ path: "./config.env" });
+require("dotenv").config({ path: "./.env" });
 const port = process.env.PORT || 5000;
 const dbo = require("./db/conn");
 
@@ -18,7 +18,7 @@ app.listen(port, () => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const server = new ApolloServer({
   typeDefs,

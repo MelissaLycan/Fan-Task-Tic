@@ -68,3 +68,23 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_BAND = gql`
+  {
+    user {
+      isBand
+      bandDetails {
+        _id
+        purchaseDate
+        products {
+          _id
+          name
+          description
+          price
+          quantity
+          image
+        }
+      }
+    }
+  }
+`;
