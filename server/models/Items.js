@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const invSchema = new Schema({
+const itemSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -28,5 +28,5 @@ const invSchema = new Schema({
   },
 });
 
-const Inventory = model("Inventory", invSchema);
-module.exports = { Inventory, invSchema };
+const Item = model("Item", itemSchema);
+module.exports = { Item, itemSchema };
