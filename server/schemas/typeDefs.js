@@ -9,7 +9,7 @@ const typeDefs = gql`
     orders: [Order]
   }
 
-    type Auth {
+  type Auth {
     token: ID!
     user: User
   }
@@ -64,14 +64,6 @@ const typeDefs = gql`
     ): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
-    updateItem(
-      name: String!
-      image_file: String!
-      current_stock: Int
-      cost: Int
-      sales_price: Int
-      order_link: String!
-    )
   }
 `;
 

@@ -1,16 +1,16 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Item, Category, Order } = require("../models");
 const { signToken } = require("../utils/auth");
-const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
+// const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
     categories: async () => {
       return await Category.find();
     },
-    inventory: async () => {
-      return await Category.find();
-    },
+    // item: async () => {
+    //   return await Category.find();
+    // },
     products: async (parent, { category, name }) => {
       const params = {};
       if (category) {
@@ -25,9 +25,9 @@ const resolvers = {
 
       return await Item.find(params).populate("category");
     },
-    inventory: async (parent, { _id }) => {
-      return await Item.findById(_id).populate("category");
-    },
+    // item: async (parent, { _id }) => {
+    //   return await Item.findById(_id).populate("category");
+    // },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -54,42 +54,42 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    checkout: async (parent, args, context) => {
-      const url = new URL(context.headers.referer).origin;
-      const order = new Order({ products: args.products });
-      const line_items = [];
+    // checkout: async (parent, args, context) => {
+    //   const url = new URL(context.headers.referer).origin;
+    //   const order = new Order({ products: args.products });
+    //   const line_items = [];
 
-      const { products } = await order.populate("products");
+    //   const { products } = await order.populate("products");
 
-      for (let i = 0; i < products.length; i++) {
-        const product = await stripe.products.create({
-          name: products[i].name,
-          description: products[i].description,
-          images: [`${url}/images/${products[i].image}`],
-        });
+    //   for (let i = 0; i < products.length; i++) {
+    //     const product = await stripe.products.create({
+    //       name: products[i].name,
+    //       description: products[i].description,
+    //       images: [`${url}/images/${products[i].image}`],
+    //     });
 
-        const price = await stripe.prices.create({
-          product: product.id,
-          unit_amount: products[i].price * 100,
-          currency: "usd",
-        });
+    //     const price = await stripe.prices.create({
+    //       product: product.id,
+    //       unit_amount: products[i].price * 100,
+    //       currency: "usd",
+    //     });
 
-        line_items.push({
-          price: price.id,
-          quantity: 1,
-        });
-      }
+    //     line_items.push({
+    //       price: price.id,
+    //       quantity: 1,
+    //     });
+    //   }
 
-      const session = await stripe.checkout.sessions.create({
-        payment_method_types: ["card"],
-        line_items,
-        mode: "payment",
-        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${url}/`,
-      });
+    //   const session = await stripe.checkout.sessions.create({
+    //     payment_method_types: ["card"],
+    //     line_items,
+    //     mode: "payment",
+    //     success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+    //     cancel_url: `${url}/`,
+    //   });
 
-      return { session: session.id };
-    },
+    //   return { session: session.id };
+    // },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -121,32 +121,32 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
   },
-  updateItem: async (parent, { _id, quantity }) => {
-    const decrement = Math.abs(quantity) * -1;
+  // updateItem: async (parent, { _id, quantity }) => {
+  //   const decrement = Math.abs(quantity) * -1;
 
-    return await Item.findByIdAndUpdate(
-      _id,
-      { $inc: { quantity: decrement } },
-      { new: true }
-    );
-  },
-  login: async (parent, { email, password }) => {
-    const user = await User.findOne({ email });
+  //   return await Item.findByIdAndUpdate(
+  //     _id,
+  //     { $inc: { quantity: decrement } },
+  //     { new: true }
+  //   );
+  // },
+  // login: async (parent, { email, password }) => {
+  //   const user = await User.findOne({ email });
 
-    if (!user) {
-      throw new AuthenticationError("Incorrect credentials");
-    }
+  //   if (!user) {
+  //     throw new AuthenticationError("Incorrect credentials");
+  //   }
 
-    const correctPw = await user.isCorrectPassword(password);
+  //   const correctPw = await user.isCorrectPassword(password);
 
-    if (!correctPw) {
-      throw new AuthenticationError("Incorrect credentials");
-    }
+  //   if (!correctPw) {
+  //     throw new AuthenticationError("Incorrect credentials");
+  //   }
 
-    const token = signToken(user);
+  //   const token = signToken(user);
 
-    return { token, user };
-  },
+  //   return { token, user };
+  // },
 };
 
 module.exports = resolvers;
