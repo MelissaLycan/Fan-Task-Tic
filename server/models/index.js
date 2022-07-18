@@ -3,6 +3,7 @@ const Item = require("./Items");
 const Order = require("./Order");
 const Category = require("./Category");
 
+<<<<<<< HEAD
 // Item.belongsTo(Users, {
 //   foreignKey: "item_id",
 // });
@@ -19,4 +20,6 @@ const Category = require("./Category");
 //   foreignKey: "order_id",
 // });
 
+=======
+>>>>>>> 7b1fc8113a299347cc96d4028c28d5fdf85a7d1d
 module.exports = { Users, Item, Order, Category };

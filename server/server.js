@@ -1,22 +1,22 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
-// const { authMiddleware } = require("./utils/auth");
+const { authMiddleware } = require("./utils/auth");
 
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 
-const cors = require("cors");
-require("dotenv").config({ path: "./.env" });
-const port = process.env.PORT || 5000;
-const dbo = require("./db/conn");
+// const cors = require("cors");
+// require("dotenv").config({ path: "./.env" });
+// const port = process.env.PORT || 5000;
+// const dbo = require("./db/conn");
 
-app.listen(port, () => {
-  // perform a database connection when server starts
-  dbo.connectToServer(function (err) {
-    if (err) console.error(err);
-  });
-});
+// app.listen(port, () => {
+//   // perform a database connection when server starts
+//   dbo.connectToServer(function (err) {
+//     if (err) console.error(err);
+//   });
+// });
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -26,10 +26,10 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-app.use(cors());
+// app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(require("./routes/record"));
+// app.use(require("./routes/record"));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
@@ -46,13 +46,10 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
   db.once("open", () => {
     app.listen(PORT, () => {
-      dbo.connectToServer(function (err) {
-        if (err) console.error(err);
-        console.log(`API server running on port ${PORT}!`);
-        console.log(
-          `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
-        );
-      });
+      console.log(`API server running on port ${PORT}!`);
+      console.log(
+        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
+      );
     });
   });
 };

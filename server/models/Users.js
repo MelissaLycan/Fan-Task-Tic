@@ -10,16 +10,14 @@ const validateEmail = function (email) {
 const userSchema = new Schema({
   first_name: {
     type: String,
-    required: true,
   },
   last_name: {
     type: String,
-    required: true,
   },
   email: {
     type: String,
-    required: true,
     unique: true,
+    required: true,
     validate: [validateEmail, "Please use a valid email address."],
   },
   username: {
@@ -33,12 +31,10 @@ const userSchema = new Schema({
   },
   admin: {
     type: Boolean,
-    required: true,
     defaultValue: false,
   },
   isBand: {
     type: Boolean,
-    required: true,
     defaultValue: false,
   },
   bandDetails: {
@@ -98,7 +94,6 @@ const userSchema = new Schema({
         },
         platform: {
           type: String,
-          required: true,
         },
         complete: {
           type: Boolean,
@@ -120,7 +115,6 @@ const userSchema = new Schema({
       },
       platform: {
         type: String,
-        required: true,
       },
       complete: {
         type: Boolean,
