@@ -1,33 +1,42 @@
-import SpotifyPlayer from 'react-spotify-player';
-// import { IdGetter } from '@apollo/client';
-import { Route } from 'react-router-dom';
+import React from "react";
+import { Users } from "mongoose"
 import "./Spotify.css"
 
 export async function Spotify() {
- 
-// size may also be a plain string using the presets 'large' or 'compact'
-const size = {
-  width: '100%',
-  height: 300,
-};
-const view = 'list'; // or 'coverart'
-const theme = 'black'; // or 'white'
+ const bandDetails =
+  await Users.findAll({isBand: true});
+  console.log(bandDetails)
 
-const isBand = await Route("/Band:bandId")
-if(isBand === this.bandDetails.bandId) {
-const bandData = await this.User.get({bandDetails: {spotifyUri: ""}})
+// const currentBand = await Route("/Band:bandName")
 
-const spotifyUri = `"spotify:artist:${bandData}"`
+// const bandData = await this.User.get({bandDetails: {spotifyUri: ""}})
 
-return <div className="spotify">
-				<SpotifyPlayer
-                    uri={spotifyUri}
-                    size={size}
-                    view={view}
-                    theme={theme}
-                    />
-       </div>             
-}
-}
+// const spotifyUri = "spotify:uri:4rDydOYVgiuL2gu0B1vEZg"
 
-export default Spotify
+// $("#spotifyWidget").attr(
+//     "src",
+//     "https://open.spotify.com/embed/artist/" + uri + "?utm_source=generator"
+//   );
+return ( <><div id="spotifyContainer" className="container">
+  <div id="spotifyTitle" className="container">
+
+  </div>
+  <div class="d-flex align-items-center music-container mb-5 event-container-img">
+    <iframe
+      id="spotifyWidget"
+      title="spotify"
+      style="border-radius: 12px"
+      width="100%"
+      height="390"
+      src="https://open.spotify.com/embed/artist/4rDydOYVgiuL2gu0B1vEZg?utm_source=generator"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+    ></iframe>
+  </div>
+</div>
+</>
+)            
+} 
+
+export default Spotify;
