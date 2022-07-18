@@ -5,7 +5,18 @@ import { QUERY_SINGLE_BAND } from '../../utils/queries';
 import "./Band.css";
 
 const Band = () => {
-const { loading, data } = useQuery(QUERY_SINGLE_BAND);
+    fetch("http://localhost:5000/band/bandId", {
+     method: "GET",
+     headers: {
+       "Content-Type": "application/json",
+     },
+     body: JSON.stringify(newUser),
+   })
+   .catch(error => {
+     window.alert(error);
+     return;
+   });
+// const { loading, data } = useQuery(QUERY_SINGLE_BAND);
         return (<> <div id="spotifyContainer" className="d-grid">
                 <div class="d-flex align-items-center music-container mb-5 event-container-img">
                     <iframe
