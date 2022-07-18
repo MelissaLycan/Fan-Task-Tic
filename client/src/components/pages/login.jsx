@@ -19,13 +19,13 @@ const Login = (props) => {
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
-    sessionStorage.setItem("status", "loggedIn");
   };
 
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
+    sessionStorage.setItem("status", "loggedIn");
     setFormState({
       ...formState,
       [name]: value,
@@ -60,12 +60,18 @@ const Login = (props) => {
 
   if (authMode === "signin") {
     return (
-      <>
-        <Button variant="primary" onClick={handleShow}>
+      <div className="d-grid gap-5">
+        <Button
+          className="login-button"
+          variant="primary"
+          size="lg"
+          onClick={handleShow}
+        >
           Login
         </Button>
+        {/* need to add to show !loggedIn ? show : null */}
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header className="modal-header">
             <main className="Login-form-container">
               <form className="Login-form" onSubmit={handleFormSubmit}>
                 <div className="Login-form-content">
@@ -113,16 +119,21 @@ const Login = (props) => {
             </main>
           </Modal.Header>
         </Modal>
-      </>
+      </div>
     );
   }
   return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
+    <div className="d-grid gap-5">
+      <Button
+        className="login-button"
+        variant="primary"
+        size="lg"
+        onClick={handleShow}
+      >
         Login
       </Button>
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header className="modal-header">
           <main className="Login-form-container">
             <form className="Login-form" onSubmit={handleFormSubmit}>
               <div className="Login-form-content">
@@ -181,7 +192,7 @@ const Login = (props) => {
           </main>
         </Modal.Header>
       </Modal>
-    </>
+    </div>
   );
 };
 
