@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const { invSchema } = require("./Inventory");
+const { itemSchema } = require("./Items");
 const bcrypt = require("bcrypt");
 const SALT_WORK_FACTOR = 10;
 const validateEmail = function (email) {
@@ -89,7 +89,7 @@ const userSchema = new Schema({
         },
       },
     ],
-    inventory: [invSchema],
+    inventory: [itemSchema],
     tasks: [
       {
         name: {
