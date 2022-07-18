@@ -7,10 +7,12 @@ const resolvers = {
     Query: {
         categories: async () => {
             return await Category.find();
-        },
+        }, 
+        inventory: async () => {
+            return await Category.find();
+        }, 
         products: async (parent, { category, name }) => {
             const params = {};
-
             if (category) {
                 params.category = category;
             }
