@@ -42,10 +42,21 @@ const userSchema = new Schema({
     defaultValue: false,
   },
   bandDetails: {
-    bandName: String,
-    website: String,
-    spotify: String,
-    bandsintown: String,
+    bandId: {
+      type: String,
+    },
+    bandName: {
+      type: String,
+    },
+    website: {
+      type: String,
+    },
+    spotify: {
+      type: String,
+    },
+    bandsintown: {
+      type: String,
+    },
     members: [
       {
         name: {

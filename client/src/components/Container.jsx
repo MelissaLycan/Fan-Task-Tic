@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,7 +7,6 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Login from ".//pages/login";
-import { Link } from "react-router-dom";
 import Band from "./pages/Band";
 import AdminUser from "./pages/AdminUser";
 import BandUser from "./pages/BandUser";
@@ -17,6 +16,7 @@ import User from "./pages/User";
 import Cart from "./pages/Cart";
 import ShopItem from "./pages/ShopItem";
 import Shop from "./pages/Shop";
+import Spotify from "./Spotify";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -40,15 +40,19 @@ const client = new ApolloClient({
 });
 
 export default function Container() {
-  {
-    /* <header className="App-header"></header> */
-  }
 
   return (
     <ApolloProvider client={client}>
       <Routes>
+        {/* <Route path="/" element={<Navigate replace to="/Band/:bandId" />} /> */}
+ spotify
         <Route path="/login" element={<Login />} />
+        <Route path="/Band/:bandName" element={<Band />} />
+
+        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Spotify />} />
         {/* <Route path="/Band/:bandId" element={<Band />} />
+
         <Route path="/User" element={<User />} />
         <Route path="/User/Band" element={<BandUser />} />
         <Route path="/User/Admin" element={<AdminUser />} />
@@ -56,7 +60,7 @@ export default function Container() {
         <Route path="/User/Band/Merchandise" element={<Merch />} />
         <Route path="/Band/:bandId/Shop/Cart" element={<Cart />} />
         <Route path="/Band/:bandId/Shop/:itemId" element={<ShopItem />} />
-        <Route path="/Band/:bandId/Shop" element={<Shop />} /> */}
+        <Route path="/Band/:bandId/Shop" element={<Shop />} />
       </Routes>
     </ApolloProvider>
   );

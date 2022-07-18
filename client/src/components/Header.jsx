@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Route, Link, Outlet } from "react-router-dom";
 import "./Header.css";
+
+import Login from ".//pages/login";
 
 function Header() {
   if (sessionStorage.getItem("status") != null) {
     // DB query to find relevant info
     return (
       <nav className="navbar nuStyle sticky-top w-50">
-        <div className="container d-inline-flex">
+        <div className="container d-inline-flex w-100">
           <div className="row align-items-center justify-content-evenly">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -24,11 +26,19 @@ function Header() {
             </svg>
             <p className="col align-self-center">Placeholder</p>
             <Link to="/Band/:bandId" className="col align-self-center">
-              <img src="Placeholder" alt="Band Image"></img>
+              <img
+                className="bandImage"
+                src="/images/ND With Name 640x640.png"
+                alt="Band Image"
+              ></img>
             </Link>
             <p className="col align-self-center">Profile</p>
             <a className="col align-self-center" href="#">
-              <img src="Placeholder" alt="User Image"></img>
+              <img
+                className="userImage"
+                src="Placeholder"
+                alt="User Image"
+              ></img>
             </a>
           </div>
         </div>
@@ -38,7 +48,7 @@ function Header() {
     // DB query to find random band and pull relevant info
     return (
       <nav className="navbar nuStyle sticky-top w-50 d-flex">
-        <div className="container flex-row">
+        <div className="flex-row w-100">
           <div className="row align-items-center justify-content-evenly">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -55,11 +65,19 @@ function Header() {
             </svg>
             <p className="col align-self-center">???</p>
             <Link to="/Band/:bandId" className="col align-self-center">
-              <img src="Placeholder" alt="Band Image"></img>
+              <img
+                className="bandImage"
+                src="/images/ND With Name 640x640.png"
+                alt="Band Image"
+              ></img>
             </Link>
             <p className="col align-self-center">Profile</p>
             <a className="col align-self-center" href="#">
-              <img src="Placeholder" alt="User Image"></img>
+              <img
+                className="userImage"
+                src="Placeholder"
+                alt="User Image"
+              ></img>
             </a>
           </div>
         </div>
