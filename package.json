@@ -15,5 +15,10 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "mongodb": "^4.8.0",
+    "mongoose": "^6.4.5",
+    "webpack": "^5.73.0"
   }
 }
