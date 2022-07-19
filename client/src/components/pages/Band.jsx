@@ -5,7 +5,6 @@ import React from "react";
 import "./Band.css";
 
 const Band = () => {
-    
         return (<> 
         <div id="spotifyContainer" className="d-grid">
                 <div class="d-flex align-items-center music-container mb-5 event-container-img">
@@ -111,3 +110,4 @@ const Band = () => {
 
 
 export default Band
+
