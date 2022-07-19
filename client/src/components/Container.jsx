@@ -17,7 +17,7 @@ import User from "./pages/User";
 import Cart from "./pages/Cart";
 import ShopItem from "./pages/ShopItem";
 import Shop from "./pages/Shop";
-import Actions from "./Actions"
+import Actions from "./Actions";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -49,8 +49,7 @@ export default function Container() {
         <Route path="/" element={<Login />} />
         <Route path="/Band/:bandId" element={<Band />} />
         <Route path="/Merch" element={<Merch />} />
-        //{" "}
-        <Route path="/User" element={<User />} />
+        // <Route path="/User" element={<User />} />
         <Route path="/User/Band" element={<BandUser />} />
         <Route path="/User/Admin" element={<AdminUser />} />
         <Route path="/Band/Actions" element={<Actions />} />
@@ -59,8 +58,6 @@ export default function Container() {
         <Route path="/Band/:bandId/Shop/Cart" element={<Cart />} />
         <Route path="/Band/:bandId/Shop/:itemId" element={<ShopItem />} />
         <Route path="/Band/:bandId/Shop" element={<Shop />} />
-
-
       </Routes>
     </ApolloProvider>
   );

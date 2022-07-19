@@ -15,22 +15,22 @@ const itemSchema = new Schema({
     defaultValue: 0,
   },
   cost: {
-    type: Schema.Types.Decimal128,
+    type: Number,
     required: true,
   },
   sales_price: {
-    type: Schema.Types.Decimal128,
+    type: Number,
     required: true,
   },
   order_link: {
     type: String,
     required: false,
   },
-  category: {
-    type: Schema.Types.ObjectId,
-    ref: 'Category',
-    required: true
-  }
+  // category: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'Category',
+  //   required: true
+  // }
 });
 
 const Item = model("Item", itemSchema);
