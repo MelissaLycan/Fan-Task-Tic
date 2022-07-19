@@ -1,5 +1,7 @@
 const { gql } = require("apollo-server-express");
 
+// TODO: Find a way to add updatePassword mutation
+
 const typeDefs = gql`
   type User {
     _id: ID
@@ -39,6 +41,11 @@ const typeDefs = gql`
     input: String
   }
 
+  type Category {
+    _id: ID
+    name: String
+  }
+
   type Item {
     _id: ID
     name: String
@@ -50,27 +57,37 @@ const typeDefs = gql`
   }
 
   type Auth {
-    token: ID!
-    email: String!
-    password: String!
+    token: ID
+    user: User
   }
 
   type Query {
     allUsers: [User]
     user(username: String!): User
+    categories: [Category]
     allBands: [BandInfo]
-    Band(bandName: String!): BandInfo
-    allOrders: [Order]
-    Order(order_id: ID): Order
-    actions: Actions
+    band(bandName: String!): BandInfo
     allItems: [Item]
     item(name: String!): Item
-    Auth: placeholder
+    order(order_id: ID): Order
+    checkout(products: [ID]!): Checkout
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): User
+
+    addUser(username: String!, email: String!, password: String!): Auth
+
+    addOrder(products: [ID]!): Order
+
+    updateUser(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): User
+
+    updateItem(_id: ID!, current_stock: Int!): Item
   }
 `;
 module.exports = typeDefs;
