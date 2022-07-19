@@ -1,6 +1,10 @@
-import { ApolloProvider } from "@apollo/client";
-import Container from "./components/Container";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+// import Container from "./components/Container";
 import Header from "./components/Header";
+import Band from "./components/pages/Band"
+import User from "./components/pages/User"
+import Merch from "./components/pages/Merch"
 // import Band from "./components/pages/Band"
 
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,7 +16,13 @@ function App() {
   return (
     <div>
           <Header />
-          <Container />
+          
+          <Merch />
+          <Routes>
+            <Route exact path="/" element={<Band />} />
+            <Route exact path="/User/:_id" element={<User />} />
+          </Routes>
+
     </div>
   );
 }

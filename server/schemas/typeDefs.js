@@ -2,69 +2,67 @@ const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
-    _id: ID!
-    firstName: String!
-    lastName: String!
-    email: String!
-    orders: [Order]
+    _id: ID
+    firstname: String
+    lastname: String
+    username: String
+    email: String
+    password: String
+    bandMember: [BandInfo]!
+    orders: [Order]!
+    actions: [Actions]!
   }
 
-  type Auth {
-    token: ID!
-    user: User
-  }
-
-  type Category {
-    _id: ID!
-    name: String!
-  }
-
-  type Product {
-    _id: ID!
-    name: String!
-    description: String!
-    image: String!
-    quantity: Int
-    price: Float
-    category: Category
+  type BandInfo {
+    _id: ID
+    bandName: String
+    website: String
+    spotify: String
+    bandsintown: String
+    members: [String]
+    socialLinks: [String]
+    inventory: [Item]
   }
 
   type Order {
-    _id: ID!
-    purchaseDate: String!
-    products: [Product]
+    order_id: ID
+    purchaseDate: String
+    products: [Item]
   }
 
-  type Checkout {
-    session: ID!
+  type Actions {
+    _id: ID
+    name: String
+    platform: String
+    complete: String
+    actionValue: Int
+    input: String
+  }
+
+  type Item {
+    _id: ID
+    name: String
+    image_file: String
+    current_stock: Int
+    cost: Float
+    sales_price: Float
+    order_link: String
   }
 
   type Query {
-    categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
-    user: User
-    order(_id: ID!): Order
-    checkout(products: [ID]!): Checkout
+    allUsers: [User]
+    user(username: String!): User
+    allBands: [BandInfo]
+    Band(bandName: String!): BandInfo
+    allOrders: [Order]
+    Order(order_id: ID): Order
+    actions: Actions
+    allItems: [Item]
+    item(name: String!): Item
   }
 
-  type Mutation {
-    addUser(
-      firstName: String!
-      lastName: String!
-      email: String!
-      password: String!
-    ): Auth
-    addOrder(products: [ID]!): Order
-    updateUser(
-      firstName: String!
-      lastName: String!
-      email: String!
-      password: String!
-    ): User
-    updateProduct(_id: ID!, quantity: Int!): Product
-    login(email: String!, password: String!): Auth
-  }
+  # type Mutation {
+
+  # }
 `;
-
 module.exports = typeDefs;

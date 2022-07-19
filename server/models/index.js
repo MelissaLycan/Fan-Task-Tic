@@ -1,6 +1,7 @@
-const Users = require("./Users");
-const Item = require("./Items");
+const User = require("./User");
+const Actions = require("./Actions");
+const BandInfo = require("./BandInfo");
+const Item = require("./Item");
 const Order = require("./Order");
-const Category = require("./Category");
 
-module.exports = { Users, Item, Order, Category };
+module.exports = { User, Actions, BandInfo, Item, Order };
