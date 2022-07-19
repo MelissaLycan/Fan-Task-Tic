@@ -5,7 +5,7 @@ export const QUERY_USER = gql`
     user {
       firstName
       lastName
-      orders: {
+      orders {
         _id
         purchaseDate
         products {
