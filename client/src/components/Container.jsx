@@ -1,3 +1,4 @@
+import React from "react"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   ApolloClient,
@@ -16,7 +17,7 @@ import User from "./pages/User";
 import Cart from "./pages/Cart";
 import ShopItem from "./pages/ShopItem";
 import Shop from "./pages/Shop";
-import Spotify from "./Spotify";
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -44,20 +45,22 @@ export default function Container() {
     <ApolloProvider client={client}>
       <Routes>
         {/* <Route path="/" element={<Navigate replace to="/Band/:bandId" />} /> */}
-        spotify
-        <Route path="/login" element={<Login />} />
+
         <Route path="/Band/:bandName" element={<Band />} />
         <Route path="/" element={<Login />} />
         <Route path="/Spotify" element={<Spotify />} />
         <Route path="/Band/:bandId" element={<Band />} />
+        <Route path="/Merch" element={<Merch />} />
+        //{" "}
         {/* <Route path="/User" element={<User />} />
-        <Route path="/User/Band" element={<BandUser />} />
-        <Route path="/User/Admin" element={<AdminUser />} />
-        <Route path="/User/Band/Inventory" element={<Inv />} />
-        <Route path="/User/Band/Merchandise" element={<Merch />} />
-        <Route path="/Band/:bandId/Shop/Cart" element={<Cart />} />
-        <Route path="/Band/:bandId/Shop/:itemId" element={<ShopItem />} />
-        <Route path="/Band/:bandId/Shop" element={<Shop />} /> */}
+        // <Route path="/User/Band" element={<BandUser />} />
+        // <Route path="/User/Admin" element={<AdminUser />} />
+        // <Route path="/User/Band/Inventory" element={<Inv />} />
+        // <Route path="/User/Band/Merchandise" element={<Merch />} />
+        // <Route path="/Band/:bandId/Shop/Cart" element={<Cart />} />
+        // <Route path="/Band/:bandId/Shop/:itemId" element={<ShopItem />} />
+        // <Route path="/Band/:bandId/Shop" element={<Shop />} /> */}
+
       </Routes>
     </ApolloProvider>
   );
