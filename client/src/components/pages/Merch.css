@@ -1,0 +1,106 @@
+#projects-area {
+  color: aliceblue;
+  font-family: "Splash", cursive;
+  background-color: #282c34;
+}
+
+.App-header {
+  background: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: aliceblue;
+}
+
+.projectItemsBrowse {
+  column-width: 15em;
+  -moz-column-width: 15em;
+  -webkit-column-width: 15em;
+  column-gap: 4rem;
+  -moz-column-gap: 4rem;
+  -webkit-column-gap: 4rem;
+}
+
+.projectItem {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem auto;
+  position: relative;
+  background: radial-gradient(
+    circle,
+    rgba(18, 33, 98, 0.6615021008403361) 40%,
+    rgba(185, 178, 41, 0.4430147058823529) 55%,
+    rgba(37, 81, 129, 0.804359243697479) 78%
+  );
+  padding: 6px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 25px;
+  transition: 0.3s ease;
+  font-size: 0;
+  min-height: 300px;
+  box-shadow: 0rem 0rem 2rem 1rem black, 0 0 5rem blue, 0 0 10rem darkblue;
+}
+
+.projectItem img {
+  max-width: 100%;
+  border-radius: 25px;
+  box-shadow: 0rem 1rem 1rem 0rem black;
+}
+
+.projectItem .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(18, 33, 98, 0.6615021008403361) 40%,
+    rgba(185, 178, 41, 0.4430147058823529) 55%,
+    rgba(37, 81, 129, 0.804359243697479) 78%
+  );
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
+.projectItem .content {
+  opacity: 0;
+  transition-delay: 1s;
+  transition: 0.3s ease;
+  font-size: 20px;
+}
+
+.projectItem:hover .content {
+  height: calc(100% - 30px);
+  width: calc(100% - 30px);
+  opacity: 1;
+  color: var(--secondary-color);
+}
+
+.projectItem:hover .content {
+  opacity: 1;
+  color: var(--secondary-color);
+}
+
+.projectItem .content a {
+  background: var(--bg-color);
+  border: solid 1px var(--text-color);
+  padding: 4px 8px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.projectItem .content a:hover {
+  text-decoration: none;
+}
