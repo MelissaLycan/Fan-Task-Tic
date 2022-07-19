@@ -10,7 +10,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    bandMember: [BandInfo]!
+    bandMember: [BandInfo]
     orders: [Order]!
     actions: [Actions]!
   }
@@ -21,9 +21,24 @@ const typeDefs = gql`
     website: String
     spotify: String
     bandsintown: String
-    members: [Members]
-    socialLinks: [String]
+    members: [Member]
+    socialLinks: Socials
     inventory: [Item]
+  }
+
+  type Member {
+    _id: ID
+    name: String
+    instrument: String
+    image: String
+  }
+
+  type Socials {
+    facebook: String
+    instagram: String
+    tiktok: String
+    twitter: String
+    youtube: String
   }
 
   type Order {
@@ -65,13 +80,6 @@ const typeDefs = gql`
     session: ID
   }
 
-  type Members {
-    _id: ID
-    name: String
-    instrument: String
-    image: String
-  }
-
   type Query {
     allUsers: [User]
     user(username: String!): User
@@ -79,7 +87,7 @@ const typeDefs = gql`
     allBands: [BandInfo]
     band(_id: ID!): BandInfo
     allItems: [Item]
-    item(name: String!): Item
+    item(_id: ID!): Item
     order(order_id: ID): Order
     checkout(products: [ID]!): Checkout
   }

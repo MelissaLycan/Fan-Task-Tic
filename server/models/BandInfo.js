@@ -15,29 +15,28 @@ const bandSchema = new Schema({
   },
   members: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "Members",
+      name: String,
+      instrument: String,
+      image: String,
     },
   ],
-  socialLinks: [
-    {
-      facebook: {
-        type: String,
-      },
-      instagram: {
-        type: String,
-      },
-      tiktok: {
-        type: String,
-      },
-      twitter: {
-        type: String,
-      },
-      youtube: {
-        type: String,
-      },
+  socialLinks: {
+    facebook: {
+      type: String,
     },
-  ],
+    instagram: {
+      type: String,
+    },
+    tiktok: {
+      type: String,
+    },
+    twitter: {
+      type: String,
+    },
+    youtube: {
+      type: String,
+    },
+  },
   inventory: [
     {
       type: Schema.Types.ObjectId,

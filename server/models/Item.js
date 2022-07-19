@@ -15,11 +15,11 @@ const itemSchema = new Schema({
     defaultValue: 0,
   },
   cost: {
-    type: Schema.Types.Decimal128,
+    type: Number,
     required: true,
   },
   sales_price: {
-    type: Schema.Types.Decimal128,
+    type: Number,
     required: true,
   },
   order_link: {

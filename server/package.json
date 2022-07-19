@@ -18,6 +18,7 @@
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "graphql": "^16.5.0",
+    "graphql-type-decimal": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.8.0",
     "mongoose": "^5.9.10",

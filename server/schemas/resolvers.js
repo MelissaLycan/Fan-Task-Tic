@@ -13,16 +13,21 @@ const resolvers = {
       return bandinfo;
     },
 
-    user: async (parent, args, context) => {
-      if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: "orders.products",
-          populate: "category",
-        });
-        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
-        return user;
-      }
-      throw new AuthenticationError("Not logged in");
+    user: async (parent, { username }) => {
+      const user = await User.findOne({ username })
+        .populate("bandMember")
+        .populate({ path: "bandMember", populate: { path: "inventory" } })
+        .exec();
+      return user;
+      // if (context.user) {
+      //   const user = await User.findById(context.user._id).populate({
+      //     path: "orders.products",
+      //     populate: "category",
+      //   });
+      //   user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+      //   return user;
+      // }
+      // throw new AuthenticationError("Not logged in");
     },
 
     categories: async () => {
@@ -30,14 +35,19 @@ const resolvers = {
     },
 
     allBands: async () => {
-      return BandInfo.find();
+      const results = BandInfo.find();
+      // .exec()
+      // .then((response) => {
+      //   console.log([response]);
+      //   response.map((res) => {
+      //     console.log(res.members);
+      //   });
+      // });
+      return results;
     },
 
     band: async (parent, { _id }) => {
-      console.log(typeof { _id });
-      // const testID = parseInt(_id);
-      // console.log(testID);
-      return BandInfo.findById({ _id });
+      return BandInfo.findById({ _id }).populate("inventory").exec();
     },
 
     allItems: async (parent, { category, name }) => {
