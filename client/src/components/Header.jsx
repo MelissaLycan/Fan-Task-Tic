@@ -4,6 +4,7 @@
 
 // import Login from ".//pages/login";
 
+
 // function Header() {
 //   if (sessionStorage.getItem("status") != null) {
 //     // DB query to find relevant info
@@ -112,6 +113,9 @@ function OffcanvasExample() {
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
+
+  
+
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
