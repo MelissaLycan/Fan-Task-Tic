@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   ApolloClient,
@@ -18,7 +18,6 @@ import Cart from "./pages/Cart";
 import ShopItem from "./pages/ShopItem";
 import Shop from "./pages/Shop";
 import Actions from "./Actions"
-
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -46,7 +45,6 @@ export default function Container() {
     <ApolloProvider client={client}>
       <Routes>
         {/* <Route path="/" element={<Navigate replace to="/Band/:bandId" />} /> */}
-
         <Route path="/Band/:bandName" element={<Band />} />
         <Route path="/" element={<Login />} />
         <Route path="/Band/:bandId" element={<Band />} />
@@ -61,6 +59,7 @@ export default function Container() {
         <Route path="/Band/:bandId/Shop/Cart" element={<Cart />} />
         <Route path="/Band/:bandId/Shop/:itemId" element={<ShopItem />} />
         <Route path="/Band/:bandId/Shop" element={<Shop />} />
+
 
       </Routes>
     </ApolloProvider>
