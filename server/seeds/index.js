@@ -3,9 +3,11 @@ const { User, BandInfo, Item } = require("../models");
 const userSeeds = require("./userSeeds.json");
 const bandSeeds = require("./bandSeeds.json");
 const itemSeeds = require("./itemSeeds.json");
+const memberSeeds = require("./memberSeeds.json");
+const Members = require("../models/Members");
 
 function getObj(item, index, input) {
-  input[index] = item;
+  input[index] = item._id;
 }
 
 db.once("open", async () => {
@@ -13,6 +15,8 @@ db.once("open", async () => {
     await User.deleteMany({});
     await BandInfo.deleteMany({});
     await Item.deleteMany({});
+    await Members.deleteMany({});
+    await Members.create(memberSeeds);
     await Item.create(itemSeeds);
     const allItems = await Item.find({});
     await BandInfo.create(bandSeeds);
@@ -20,6 +24,7 @@ db.once("open", async () => {
     const allBands = await BandInfo.find({});
 
     allItems.forEach(getObj);
+
     await BandInfo.findOneAndUpdate(
       { bandName: "nordicdaughter" },
       { $push: { inventory: allItems } },
@@ -32,7 +37,7 @@ db.once("open", async () => {
       { $push: { bandMember: allBands } },
       { returnNewDocument: true }
     );
-    console.log(...allBands);
+    console.log(allBands);
 
     console.log("all done!");
     process.exit(0);

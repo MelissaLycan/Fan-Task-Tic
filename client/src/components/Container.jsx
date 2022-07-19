@@ -44,12 +44,8 @@ export default function Container() {
     <ApolloProvider client={client}>
       <Routes>
         {/* <Route path="/" element={<Navigate replace to="/Band/:bandId" />} /> */}
-        spotify
-        <Route path="/login" element={<Login />} />
         <Route path="/Band/:bandName" element={<Band />} />
         <Route path="/" element={<Login />} />
-        <Route path="/Spotify" element={<Spotify />} />
-        <Route path="/Band/:bandId" element={<Band />} />
         {/* <Route path="/User" element={<User />} />
         <Route path="/User/Band" element={<BandUser />} />
         <Route path="/User/Admin" element={<AdminUser />} />

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Melissa Lycan",
+    "instrument": "Vocals",
+    "image": "./images/melissalycan.jpg"
+  },
+  {
+    "name": "Jason Lycan",
+    "instrument": "Guitar",
+    "image": "./images/jasonlycan.jpg"
+  },
+  {
+    "name": "Sarah Jylkka",
+    "instrument": "Violin",
+    "image": "./images/sarahjylkka.jpg"
+  },
+  {
+    "name": "Tracy Strokes",
+    "instrument": "Keys",
+    "image": "./images/tracystokes.jpg"
+  },
+  {
+    "name": "Evan Degrasse",
+    "instrument": "Drums",
+    "image": "./images/EvanDeGrasse.jpg"
+  },
+  {
+    "name": "Jason Seigel",
+    "instrument": "Bass",
+    "image": "./images/JasonSeigel.jpg"
+  }
+]

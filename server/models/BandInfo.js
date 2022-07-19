@@ -15,9 +15,8 @@ const bandSchema = new Schema({
   },
   members: [
     {
-      name: String,
-      instrument: String,
-      image: String,
+      type: Schema.Types.ObjectId,
+      ref: "Members",
     },
   ],
   socialLinks: [

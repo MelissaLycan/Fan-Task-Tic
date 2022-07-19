@@ -4,38 +4,7 @@
     "website": "https://www.nordicdaughter.com",
     "spotify": "4rDydOYVgiuL2gu0B1vEZg",
     "bandsintown": "11577570",
-    "members": [
-      {
-        "name": "Melissa Lycan",
-        "instrument": "Vocals",
-        "image": "./images/melissalycan.jpg"
-      },
-      {
-        "name": "Jason Lycan",
-        "instrument": "Guitar",
-        "image": "./images/jasonlycan.jpg"
-      },
-      {
-        "name": "Sarah Jylkka",
-        "instrument": "Violin",
-        "image": "./images/sarahjylkka.jpg"
-      },
-      {
-        "name": "Tracy Strokes",
-        "instrument": "Keys",
-        "image": "./images/tracystokes.jpg"
-      },
-      {
-        "name": "Evan Degrasse",
-        "instrument": "Drums",
-        "image": "./images/EvanDeGrasse.jpg"
-      },
-      {
-        "name": "Jason Seigel",
-        "instrument": "Bass",
-        "image": "./images/JasonSeigel.jpg"
-      }
-    ],
+    "members": [],
     "socialLinks": [
       { "facebook": "https://www.facebook.com/nordicdaughter" },
       { "instagram": "https://www.instagram.com/" },

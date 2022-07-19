@@ -21,7 +21,7 @@ const typeDefs = gql`
     website: String
     spotify: String
     bandsintown: String
-    members: [String]
+    members: [Members]
     socialLinks: [String]
     inventory: [Item]
   }
@@ -61,12 +61,23 @@ const typeDefs = gql`
     user: User
   }
 
+  type Checkout {
+    session: ID
+  }
+
+  type Members {
+    _id: ID
+    name: String
+    instrument: String
+    image: String
+  }
+
   type Query {
     allUsers: [User]
     user(username: String!): User
     categories: [Category]
     allBands: [BandInfo]
-    band(bandName: String!): BandInfo
+    band(_id: ID!): BandInfo
     allItems: [Item]
     item(name: String!): Item
     order(order_id: ID): Order
