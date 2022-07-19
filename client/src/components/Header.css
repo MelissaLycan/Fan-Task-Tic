@@ -15,6 +15,11 @@ nav {
   color: aliceblue;
 }
 
+.headContent {
+  font-family: "Federant", cursive;
+  color: antiquewhite;
+}
+
 .bandWidget {
   position: absolute;
   top: 75rem;
