@@ -39,6 +39,11 @@ const typeDefs = gql`
     input: String
   }
 
+  type Category {
+    _id: ID
+    name: String
+  }
+
   type Item {
     _id: ID
     name: String
@@ -49,20 +54,38 @@ const typeDefs = gql`
     order_link: String
   }
 
+  type Auth {
+    token: ID
+    user: User
+  }
+
   type Query {
     allUsers: [User]
     user(username: String!): User
     allBands: [BandInfo]
     Band(bandName: String!): BandInfo
     allOrders: [Order]
-    Order(order_id: ID): Order
+    order(order_id: ID): Order
     actions: Actions
     allItems: [Item]
     item(name: String!): Item
   }
 
-  # type Mutation {
+  type Mutation {
+    login(email: String!, password: String!): Auth
 
-  # }
+    addUser(username: String!, email:String!, password: String!): Auth
+
+    addOrder(products: [ID]!): Order
+
+    updateUser(firstName: String!, lastName: String!, email: String!, password: String!): User
+
+    updatePassword
+
+    addItem(_id: ID!, name: String!, image_file: String!, current_stock: Int!, cost: Float!, sales_price: Float!, order_link:String!): Item
+    
+    updateItem(_id: ID!, current_stock: Int!): Item
+
+  }
 `;
 module.exports = typeDefs;

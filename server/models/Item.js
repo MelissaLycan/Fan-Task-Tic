@@ -26,6 +26,11 @@ const itemSchema = new Schema({
     type: String,
     required: false,
   },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: 'Category',
+    required: true
+  }
 });
 
 const Item = model("Item", itemSchema);
