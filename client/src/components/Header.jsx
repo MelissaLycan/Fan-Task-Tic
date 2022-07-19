@@ -28,7 +28,7 @@ function Header() {
             <Link to="/Band/:bandId" className="col align-self-center">
               <img
                 className="bandImage"
-                src="/images/ND With Name 640x640.png"
+                src="../Assets/images"
                 alt="Band Image"
               ></img>
             </Link>
