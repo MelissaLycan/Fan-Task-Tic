@@ -95,7 +95,7 @@ const MerchImages = [
 
 function Merch() {
   return (
-    <section className="App-header">
+    <section className="merchBack">
       <Container id="projects-area">
         <Row className="mb-5 mt-3">
           <Col lg="8">

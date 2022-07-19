@@ -1,7 +1,7 @@
-nav {
+/* nav {
   background-image: url("../../public/images/banner_crowd.jpg");
-  width: max-content;
-  display: block;
+  width: 50rem;
+  display: none;
   padding: 0.7rem 1.7rem;
   z-index: 2;
   position: fixed;
@@ -10,14 +10,21 @@ nav {
   bottom: 2rem;
   display: flex;
   gap: 0.8rem;
-  border-radius: 3rem;
-  backdrop-filter: blur(15px);
   color: aliceblue;
+} */
+
+h1 {
+  color: antiquewhite;
 }
 
 .headContent {
   font-family: "Federant", cursive;
   color: antiquewhite;
+}
+
+.menuText {
+  font-size: 2rem;
+  color: black;
 }
 
 .bandWidget {
