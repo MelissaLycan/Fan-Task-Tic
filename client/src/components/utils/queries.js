@@ -5,7 +5,7 @@ export const QUERY_USER = gql`
     user {
       firstName
       lastName
-      orders: {
+      orders {
         _id
         purchaseDate
         products {
@@ -65,6 +65,45 @@ export const QUERY_CHECKOUT = gql`
   query getCheckout($products: [ID]!) {
     checkout(products: $products) {
       session
+    }
+  }
+`;
+
+export const QUERY_BAND = gql`
+  {
+    user {
+      isBand
+      bandDetails {
+        _id
+        purchaseDate
+        products {
+          _id
+          name
+          description
+          price
+          quantity
+          image
+        }
+      }
+    }
+  }
+`;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      bookCount
+      savedBooks {
+        authors
+        description
+        bookId
+        image
+        title
+        link
+      }
     }
   }
 `;
