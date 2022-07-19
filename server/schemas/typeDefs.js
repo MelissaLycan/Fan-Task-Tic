@@ -49,6 +49,12 @@ const typeDefs = gql`
     order_link: String
   }
 
+  type Auth {
+    token: ID!
+    email: String!
+    password: String!
+  }
+
   type Query {
     allUsers: [User]
     user(username: String!): User
@@ -59,10 +65,12 @@ const typeDefs = gql`
     actions: Actions
     allItems: [Item]
     item(name: String!): Item
+    Auth: placeholder
   }
 
-  # type Mutation {
-
-  # }
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): User
+  }
 `;
 module.exports = typeDefs;
