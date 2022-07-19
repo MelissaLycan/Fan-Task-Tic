@@ -1,70 +1,89 @@
 const { gql } = require("apollo-server-express");
 
+// TODO: Find a way to add updatePassword mutation
+
 const typeDefs = gql`
   type User {
-    _id: ID!
-    firstName: String!
-    lastName: String!
-    email: String!
-    orders: [Order]
+    _id: ID
+    firstname: String
+    lastname: String
+    username: String
+    email: String
+    password: String
+    bandMember: [BandInfo]!
+    orders: [Order]!
+    actions: [Actions]!
   }
 
-  type Auth {
-    token: ID!
-    user: User
-  }
-
-  type Category {
-    _id: ID!
-    name: String!
-  }
-
-  type Product {
-    _id: ID!
-    name: String!
-    description: String!
-    image: String!
-    quantity: Int
-    price: Float
-    category: Category
+  type BandInfo {
+    _id: ID
+    bandName: String
+    website: String
+    spotify: String
+    bandsintown: String
+    members: [String]
+    socialLinks: [String]
+    inventory: [Item]
   }
 
   type Order {
-    _id: ID!
-    purchaseDate: String!
-    products: [Product]
+    order_id: ID
+    purchaseDate: String
+    products: [Item]
   }
 
-  type Checkout {
-    session: ID!
+  type Actions {
+    _id: ID
+    name: String
+    platform: String
+    complete: String
+    actionValue: Int
+    input: String
+  }
+
+  type Category {
+    _id: ID
+    name: String
+  }
+
+  type Item {
+    _id: ID
+    name: String
+    image_file: String
+    current_stock: Int
+    cost: Float
+    sales_price: Float
+    order_link: String
+  }
+
+  type Auth {
+    token: ID
+    user: User
   }
 
   type Query {
+    allUsers: [User]
+    user(username: String!): User
     categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
-    user: User
-    order(_id: ID!): Order
+    allBands: [BandInfo]
+    band(bandName: String!): BandInfo
+    allItems: [Item]
+    item(name: String!): Item
+    order(order_id: ID): Order
     checkout(products: [ID]!): Checkout
   }
 
   type Mutation {
-    addUser(
-      firstName: String!
-      lastName: String!
-      email: String!
-      password: String!
-    ): Auth
-    addOrder(products: [ID]!): Order
-    updateUser(
-      firstName: String!
-      lastName: String!
-      email: String!
-      password: String!
-    ): User
-    updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
+
+    addUser(username: String!, email:String!, password: String!): Auth
+
+    addOrder(products: [ID]!): Order
+
+    updateUser(firstName: String!, lastName: String!, email: String!, password: String!): User
+    
+    updateItem(_id: ID!, current_stock: Int!): Item
+
   }
 `;
-
 module.exports = typeDefs;
