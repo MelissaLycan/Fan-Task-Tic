@@ -29,4 +29,4 @@ const itemSchema = new Schema({
 });
 
 const Item = model("Item", itemSchema);
-module.exports = { Item, itemSchema };
+module.exports = Item;
