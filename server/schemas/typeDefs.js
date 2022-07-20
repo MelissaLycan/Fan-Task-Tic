@@ -100,8 +100,7 @@ const typeDefs = gql`
     addOrder(products: [ID]!): Order
 
     updateUser(
-      firstName: String!
-      lastName: String!
+      username: String!
       email: String!
       password: String!
     ): User
