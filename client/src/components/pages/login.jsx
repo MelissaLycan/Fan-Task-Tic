@@ -14,9 +14,10 @@ const Login = (props) => {
     email: "",
     password: "",
   });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error, data }] = useMutation(LOGIN_USER)
+  console.log(error);
   let [authMode, setAuthMode] = useState("signin");
-
+  console.log(data)
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
   };

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Share a Video",
+    "platform": "FaceBook",
+    "complete": false,
+    "actionValue": 25,
+    "input": ""
+  },
+  {
+    "name": "Share a Video",
+    "platform": "Instagram",
+    "complete": false,
+    "actionValue": 25,
+    "input": ""
+  },
+ {
+    "name": "Share a Video",
+    "platform": "YouTube",
+    "complete": false,
+    "actionValue": 25,
+    "input": ""
+  },
+  {
+    "name": "Share a Song",
+    "platform": "TikTok",
+    "complete": false,
+    "actionValue": 25,
+    "input": ""
+  },
+  {
+    "name": "Share a Song",
+    "platform": "Instagram",
+    "complete": false,
+    "actionValue": 25,
+    "input": ""
+  },
+  {
+    "name": "Buy Merch",
+    "platform": "FanTaskTic",
+    "complete": false,
+    "actionValue": 200,
+    "input": ""
+  },
+  {
+    "name": "Buy Tickets",
+    "platform": "EventBrite",
+    "complete": false,
+    "actionValue": 100,
+    "input": ""
+  },
+  {
+    "name": "Write a Review",
+    "platform": "WestWord",
+    "complete": true,
+    "actionValue": 500,
+    "input": "https://www.nordicdaughter.com/press"
+  },
+ {
+    "name": "Book us on a Festival",
+    "platform": "Events",
+    "complete": false,
+    "actionValue": 5000,
+    "input": ""
+  }
+]
