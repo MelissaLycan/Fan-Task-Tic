@@ -111,14 +111,14 @@ const resolvers = {
   },
 
   Mutation: {
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
       if (!user) {
-        throw new AuthenticationError("Incorrect credentials");
+        throw new AuthenticationError("Incorrect credentials *username*");
       }
-      const correctPw = await user.isCorrectPassword(password);
+      const correctPw = await user.comparePassword(password);
       if (!correctPw) {
-        throw new AuthenticationError("Incorrect credentials");
+        throw new AuthenticationError("Incorrect credentials *password*");
       }
       const token = signToken(user);
       return { token, user };
