@@ -2,15 +2,15 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Login from ".//pages/login";
-import Band from "./pages/Band";
-import AdminUser from "./pages/AdminUser";
-import BandUser from "./pages/BandUser";
-import Merch from "./pages/Merch";
-import User from "./pages/User";
-import Cart from "./pages/Cart";
-import ShopItem from "./pages/ShopItem";
-import Shop from "./pages/Shop";
-import Actions from "./Actions";
+import Band from ".//pages/Band";
+import AdminUser from ".//pages/AdminUser";
+import BandUser from ".//pages/BandUser";
+import Merch from ".//pages/Merch";
+import User from ".//pages/User";
+import Cart from ".//pages/Cart";
+import ShopItem from ".//pages/ShopItem";
+import Shop from ".//pages/Shop";
+import Actions from ".//Actions";
 
 
 export default function Container() {
