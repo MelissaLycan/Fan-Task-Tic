@@ -146,10 +146,10 @@ const Login = (props) => {
                   </span>
                 </div>
                 <div className="form-group mt-3">
-                  <label>Name</label>
+                  <label>Username</label>
                   <input
                     className="form-control mt-1"
-                    placeholder="Your email"
+                    placeholder="username"
                     name="name"
                     type="text"
                     value={formState.name}
