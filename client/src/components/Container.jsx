@@ -1,5 +1,6 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Switch, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import Login from ".//pages/login";
 import Band from ".//pages/Band";

@@ -1,6 +1,7 @@
 import Container from "./components/Container";
 import Header from "./components/Header";
 import "./app.css";
+import { BrowserRouter } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -35,8 +36,10 @@ function App() {
   return (
     <div>
       <ApolloProvider client={client}>
-        <Header />
-        <Container />
+        <BrowserRouter>
+          <Header />
+          <Container />
+        </BrowserRouter>
       </ApolloProvider>
     </div>
   );
