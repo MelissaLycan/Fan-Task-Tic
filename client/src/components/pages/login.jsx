@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Button from "react-bootstrap/Button";
@@ -10,7 +10,7 @@ import "./login.css";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
   });
@@ -42,13 +42,14 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
+      return <Navigate to={`/User/${formState.username}`} />;
     } catch (e) {
       console.error(e);
     }
 
     // clear form values
     setFormState({
-      name: "",
+      username: "",
       email: "",
       password: "",
     });
@@ -84,13 +85,13 @@ const Login = (props) => {
                     </span>
                   </div>
                   <div className="form-group mt-3">
-                    <label>Email address</label>
+                    <label>Username</label>
                     <input
                       className="form-control mt-1"
-                      placeholder="Your email"
-                      name="email"
-                      type="email"
-                      value={formState.email}
+                      placeholder="username"
+                      name="username"
+                      type="text"
+                      value={formState.username}
                       onChange={handleChange}
                     />
                   </div>
@@ -146,13 +147,13 @@ const Login = (props) => {
                   </span>
                 </div>
                 <div className="form-group mt-3">
-                  <label>Name</label>
+                  <label>Username</label>
                   <input
                     className="form-control mt-1"
-                    placeholder="Your email"
-                    name="name"
+                    placeholder="username"
+                    name="username"
                     type="text"
-                    value={formState.name}
+                    value={formState.username}
                     onChange={handleChange}
                   />
                 </div>

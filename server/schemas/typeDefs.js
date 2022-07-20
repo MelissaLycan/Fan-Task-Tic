@@ -72,7 +72,7 @@ const typeDefs = gql`
   }
 
   type Auth {
-    token: ID
+    token: ID!
     user: User
   }
 
@@ -90,20 +90,25 @@ const typeDefs = gql`
     item(_id: ID!): Item
     order(order_id: ID): Order
     checkout(products: [ID]!): Checkout
+    me: User
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
 
     addUser(username: String!, email: String!, password: String!): Auth
 
     addOrder(products: [ID]!): Order
 
+<<<<<<< HEAD
     updateUser(
       username: String!
       email: String!
       password: String!
     ): User
+=======
+    updateUser(username: String!, email: String!, password: String!): User
+>>>>>>> ae3b81bdb28048027cc43b2d4fbec6bd9ba22b55
 
     updateItem(_id: ID!, current_stock: Int!): Item
   }

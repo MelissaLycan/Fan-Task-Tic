@@ -110,6 +110,9 @@ function Merch() {
                 <img src={data.image_file} alt="" />
                 <div className="content">
                   <p>{data.name}</p>
+                  <a href={data.order_link} target="_blank">
+                    view project
+                  </a>
                 </div>
               </div>
             );
