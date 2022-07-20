@@ -13,7 +13,7 @@ This application will allow users to follow along with their favorite bands. The
 ----------------------------------------------------------------
 ## Usage
 
-[Merchandise Page Screenshot](client/public/images/MerchScreenshot.jpg)
+![Merchandise Page Screenshot](client/public/images/MerchScreenshot.jpg)
 
 ![Band Page Screenshot](client/public/images/BandScreenshot.jpg)
 
