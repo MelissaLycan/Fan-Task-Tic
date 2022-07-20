@@ -5,6 +5,7 @@ const { authMiddleware } = require("./utils/auth");
 
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
+require("dotenv").config();
 
 // const cors = require("cors");
 // require("dotenv").config({ path: "./.env" });

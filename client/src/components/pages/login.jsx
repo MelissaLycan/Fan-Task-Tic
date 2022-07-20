@@ -42,7 +42,6 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
-      return <Navigate to={`/User/${formState.username}`} />;
     } catch (e) {
       console.error(e);
     }
@@ -53,6 +52,7 @@ const Login = (props) => {
       email: "",
       password: "",
     });
+    return <Navigate to={`/User/${formState.username}`} />;
   };
 
   const [show, setShow] = useState(false);
