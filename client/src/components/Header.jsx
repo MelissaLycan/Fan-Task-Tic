@@ -54,15 +54,17 @@ function OffcanvasExample() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3 menuText">
-
                   <Nav.Link>
                     <Link to="/Merch">Merch</Link>
-                   </Nav.Link>
+                  </Nav.Link>
 
-                  <Nav.Link><Link to="/Band/Actions">Actions</Link></Nav.Link>
+                  <Nav.Link>
+                    <Link to="/Band/Actions">Actions</Link>
+                  </Nav.Link>
 
-                  <Nav.Link><Link to="/User">User</Link></Nav.Link>
-
+                  <Nav.Link>
+                    <Link to="/User">User</Link>
+                  </Nav.Link>
 
                   <NavDropdown
                     title="Bands"
