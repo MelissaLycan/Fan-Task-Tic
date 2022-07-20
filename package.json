@@ -2,6 +2,10 @@
   "name": "fan-task-tic",
   "version": "1.0.0",
   "description": "fan app designed to allow fans to take actions for points toward merchandise",
+  "engines": {
+    "node": "16.x"
+  },
+  
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -9,6 +13,7 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
+    
   },
   "keywords": [],
   "author": "",
