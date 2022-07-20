@@ -6,10 +6,10 @@ const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 const resolvers = {
   Query: {
     allUsers: async () => {
-      const bandinfo = await User.find({}).populate({
-        path: "users.bandMember",
-        populate: "bandinfos",
-      });
+      const bandinfo = await User.find({})
+        .populate("bandMember")
+        .populate({ path: "bandMember", populate: { path: "inventory" } })
+        .exec();
       return bandinfo;
     },
 
