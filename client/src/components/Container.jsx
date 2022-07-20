@@ -49,8 +49,11 @@ export default function Container() {
         <Route path="/" element={<Login />} />
         <Route path="/:username/:bandId" element={<Band />} />
         <Route path="/Merch" element={<Merch />} />
+
+        <Route path="/User" element={<User />} />
         <Route path="/User/:username" element={<User />} />
         <Route path="/:username" element={<User />} />
+
         <Route path="/User/Band" element={<BandUser />} />
         <Route path="/User/Admin" element={<AdminUser />} />
         <Route path="/Band/Actions" element={<Actions />} />
