@@ -45,13 +45,13 @@ export default function Container() {
     <ApolloProvider client={client}>
       <Routes>
         {/* <Route path="/" element={<Navigate replace to="/Band/:bandId" />} /> */}
-        <Route path="/Band/:bandName" element={<Band />} />
+        <Route path="/Band/:id" element={<BandUser />} />
         <Route path="/" element={<Login />} />
         <Route path="/Band/:bandId" element={<Band />} />
         <Route path="/Merch" element={<Merch />} />
         //{" "}
         <Route path="/User" element={<User />} />
-        <Route path="/User/Band" element={<BandUser />} />
+        <Route path="/Band/:bandName" element={<Band />} />
         <Route path="/User/Admin" element={<AdminUser />} />
         <Route path="/Band/Actions" element={<Actions />} />
         <Route path="/User/Band/Inventory" element={<InvList />} />
