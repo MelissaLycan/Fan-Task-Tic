@@ -8,6 +8,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import Actions from "./Actions";
 
 import "./Header.css";
 
@@ -55,7 +56,12 @@ function OffcanvasExample() {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3 menuText">
                   <Nav.Link href="/merch">Merch</Nav.Link>
+
+                  <Nav.Link href="/users">User</Nav.Link>
+                  <Nav.Link href="/Band/Actions">Actions</Nav.Link>
+
                   <Nav.Link href="/User">User</Nav.Link>
+
 
                   <NavDropdown
                     title="Bands"

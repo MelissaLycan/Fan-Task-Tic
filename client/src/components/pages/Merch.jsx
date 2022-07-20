@@ -111,7 +111,7 @@ export function Merch() {
                 <div className="content">
                   <p>{data.name}</p>
                   <a href={data.order_link} target="_blank">
-                    view project
+                    purchase
                   </a>
                 </div>
               </div>
