@@ -73,7 +73,7 @@ const typeDefs = gql`
 
   type Auth {
     token: ID
-    user: User
+    username: User
   }
 
   type Checkout {
@@ -99,12 +99,7 @@ const typeDefs = gql`
 
     addOrder(products: [ID]!): Order
 
-    updateUser(
-      firstName: String!
-      lastName: String!
-      email: String!
-      password: String!
-    ): User
+    updateUser(username: String!, email: String!, password: String!): User
 
     updateItem(_id: ID!, current_stock: Int!): Item
   }
