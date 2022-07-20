@@ -57,7 +57,6 @@ function OffcanvasExample() {
                 <Nav className="justify-content-end flex-grow-1 pe-3 menuText">
                   <Nav.Link href="/merch">Merch</Nav.Link>
 
-                  <Nav.Link href="/users">User</Nav.Link>
                   <Nav.Link href="/Band/Actions">Actions</Nav.Link>
 
                   <Nav.Link href="/User">User</Nav.Link>
@@ -67,7 +66,7 @@ function OffcanvasExample() {
                     title="Bands"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="/Band/:bandId">
+                    <NavDropdown.Item href="/Band">
                       Nordic Daughter
                     </NavDropdown.Item>
 
