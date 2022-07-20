@@ -68,8 +68,8 @@ function OffcanvasExample() {
                     title="Bands"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="/Band">
-                      Nordic Daughter
+                    <NavDropdown.Item>
+                      <Link to="/Band">Nordic Daughter</Link>
                     </NavDropdown.Item>
 
                     <NavDropdown.Item href="#action4">{""}</NavDropdown.Item>
