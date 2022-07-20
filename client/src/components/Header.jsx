@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Route, Link, Outlet } from "react-router-dom";
-
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -55,17 +54,24 @@ function OffcanvasExample() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3 menuText">
-                  <Nav.Link href="/merch">Merch</Nav.Link>
-                  <Nav.Link href="/Band/Actions">Actions</Nav.Link>
+                  <Nav.Link>
+                    <Link to="/Merch">Merch</Link>
+                  </Nav.Link>
 
-                  <Nav.Link href="/User">User</Nav.Link>
+                  <Nav.Link>
+                    <Link to="/Band/Actions">Actions</Link>
+                  </Nav.Link>
+
+                  <Nav.Link>
+                    <Link to="/User">User</Link>
+                  </Nav.Link>
 
                   <NavDropdown
                     title="Bands"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="/Band/:bandId">
-                      Nordic Daughter
+                    <NavDropdown.Item>
+                      <Link to="/Band">Nordic Daughter</Link>
                     </NavDropdown.Item>
 
                     <NavDropdown.Item href="#action4">{""}</NavDropdown.Item>
