@@ -1,190 +1,274 @@
+import React from "react"
+import "./Inv.css"
 
-// // import React from "react";
+const MerchImages = [
+  {
+    name: "CD: Forgotten",
+    cost: 2.33,
+    sales_price: 9.0,
+    order_link: "https://www.uprinting.com",
+    image_file:
+      "https://www.youthonrecord.org/sites/default/files/2018-09/Nordic%20Daughter%20Sticker%20-%20Nordic%20Daughter.jpg",
+    current_stock: "100",
+  },
+  {
+    name: "CD: The Path",
+    cost: 2.33,
+    sales_price: 10.0,
+    order_link: "https://www.uprinting.com",
+    image_file:
+      "https://resources.tidal.com/images/67a4a7d1/5d80/40c5/8119/3c58ee482092/640x640.jpg",
+    current_stock: "100",
+  },
+  {
+    name: "Hoodie",
+    cost: 15.0,
+    sales_price: 50.0,
+    order_link: "https://www.uprinting.com",
+    image_file:
+      "https://mockup-api.teespring.com/v3/image/dlnkK9vxd2EVaHxTsZQrmx1G3nk/800/800.jpg",
+    current_stock: "50",
+  },
+  {
+    name: "Shot Glass",
+    cost: 1.54,
+    sales_price: 8.0,
+    order_link: "https://www.uprinting.com",
+    image_file: "href",
+    current_stock: "100",
+  },
+  {
+    name: "Drinking Horn",
+    cost: 9.67,
+    sales_price: 40,
+    order_link: "https://www.uprinting.com",
+    image_file:
+      "https://cdn.shopify.com/s/files/1/1408/0936/products/1_Custom_a8af9004-1730-4f6a-b530-4800c71b96ee_750x750.jpg?v=1625414418",
+    current_stock: "200",
+  },
+  {
+    name: "Rune Set",
+    cost: 3.15,
+    sales_price: 25.0,
+    order_link: "https://www.uprinting.com",
+    image_file: "https://m.media-amazon.com/images/I/51ORlClkXYL._AC_.jpg",
+    current_stock: "25",
+  },
+  {
+    name: "Chainmail Necklace",
+    cost: 15,
+    sales_price: 40,
+    order_link: "https://www.uprinting.com",
+    image_file:
+      "https://i.etsystatic.com/34181806/c/3000/2384/0/615/il/e93680/3927535904/il_680x540.3927535904_lx5c.jpg",
+    current_stock: "10",
+  },
+  {
+    name: "Guitar Pic Earrings",
+    cost: 1.35,
+    sales_price: 20.0,
+    order_link: "https://www.uprinting.com",
+    image_file:
+      "https://i.etsystatic.com/24335123/r/il/2e7e0a/3118902789/il_1588xN.3118902789_1wue.jpg",
+    current_stock: "100",
+  },
+  {
+    name: "TShirt: Forgotten",
+    cost: 10.35,
+    sales_price: 35,
+    order_link: "https://www.uprinting.com",
+    image_file:
+      "https://metaunisex.com/wp-content/uploads/2021/12/Vegvisir2Bviking2Bcompass2Brune2Bprotection2Bsymbol2BCelts2BNordic2BT-Shirt_1_Basic-lBPZ5.jpg",
+    current_stock: "100",
+  },
+  {
+    name: "TShirt: The Path",
+    cost: 10.35,
+    sales_price: 35,
+    order_link: "https://www.uprinting.com",
+    image_file:
+      "https://ih1.redbubble.net/image.438277287.8721/ssrco,classic_tee,mens,101010:01c5ca27c6,front_alt,square_product,600x600.u5.jpg",
+    current_stock: "100",
+  },
+];
 
-// // TODO: Database function to pull data and get array
+export default function InvList() {
 
-// // TODO: JS function to create new inventory item in database
+  return (<>
+    <div>
+      <h1 className="logInMsg">Merchandise Inventory</h1>
+      <div>
+        <div className="tablediv">
+          <button
+            data-target="modalAddInv"
+            className="btn addbtn modal-trigger waves-effect waves-light btn-large"
+          >
+            Add Item
+          </button>
 
-// export default function InvList() {
-//   // Needs custom hook
+          <div id="modalAddInv" className="modal">
+            <div className="modal-content">
+              <h4>Add to Inventory</h4>
+              {MerchImages.map((prop, key) => {
+                return (
+                  <div className="row">
+                    <form id="add-item-form" class="col s12">
+                      <div className="row">
+                        <div className="input-field col s6">
+                          <input
+                            placeholder="Item Name"
+                            id={key}
+                            type="text"
+                            className="validate"
+                          />
+                          <label for="item_name"></label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                );
+              })}
+              </div>
+                                <div className="row">
+                                    <div className="input-field col s6">
+                                    <input
+                                        placeholder="Amount in Stock"
+                                        id="currentStock"
+                                        type="text"
+                                            className="validate"
+                                    />
+                                    <label for="currentStock"></label>
+                                </div>
+                            </div>
+                                <div className="row">
+                                    <div className="input-field col s6">
+                                    <input
+                                        placeholder="Image Link"
+                                        id="imageLink"
+                                        type="text"
+                                            className="validate"
+                                    />
+                                    <label for="imageLink"></label>
+                                </div>
+                            </div>
+                                <div className="row">
+                                    <div className="input-field col s6">
+                                    <input
+                                        placeholder="Order Link"
+                                        id="orderLink"
+                                        type="text"
+                                        className="validate"
+                                    />
+                                    <label for="orderLink"></label>
+                                </div>
+                            </div>
+                                <div className="row">
+                                    <div className="input-field col s6">
+                                    <input
+                                        placeholder="Price"
+                                        id="price"
+                                        type="text"
+                                            className="validate"
+                                    />
+                                    <label for="price"></label>
+                                        <div className="modal-footer">
+                                        <button
+                                                className="addbtn modal-close waves-effect waves-light btn-large"
+                                            href="#!">
+                                        Add Item
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+          </div>
 
-//   // need utils with queries and mutations, typedefs and resolvers, apollo connection
+          <div id="modalUpdateInv" className="modal">
+            <div className="modal-content">
+              <h4>Update Item</h4>
+              <div className="row">
+                <form id="update-item-form" className="col s12">
+                  <div className="row">
+                    <div className="input-field col s6">
+                      <input
+                        placeholder="Item Name"
+                        id="itemNameUpdate"
+                        type="text"
+                        className="validate"
+                      />
+                      <label for="itemNameUpdate"></label>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="input-field col s6">
+                      <input
+                        placeholder="Amount in Stock"
+                        id="currentStockUpdate"
+                        type="text"
+                        className="validate"
+                      />
+                      <label for="currentStockUpdate"></label>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="input-field col s6">
+                      <input
+                        placeholder="Image Link"
+                        id="imageLinkUpdate"
+                        type="text"
+                        className="validate"
+                      />
+                      <label for="imageLinkUpdate"></label>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="input-field col s6">
+                      <input
+                        placeholder="Order Link"
+                        id="orderLinkUpdate"
+                        type="text"
+                        className="validate"
+                      />
+                      <label for="orderLinkUpdate"></label>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="input-field col s6">
+                      <input
+                        placeholder="Price"
+                        id="priceUpdate"
+                        type="text"
+                        className="validate"
+                      />
+                      <label for="priceUpdate"></label>
+                      <div className="modal-footer">
+                        <button
+                          className="addbtn modal-close waves-effect waves-light btn-large"
+                          href="#!"
+                        >
+                          Update Item
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
 
-//   return (
-//     <div>
-//       <h1 className="logInMsg">Merchandise Inventory</h1>
-//       <div>
-//         <div className="tablediv">
-//           <button
-//             data-target="modalAddInv"
-//             className="btn addbtn modal-trigger waves-effect waves-light btn-large"
-//           >
-//             Add Item
-//           </button>
+          <table className="highlight">
+            <thead>
+              <tr>
+                <th>Item Name</th>
+                <th>Amount in Stock</th>
+                <th>Price</th>
+              </tr>
+            </thead>
 
-//           <div id="modalAddInv" className="modal">
-//             <div className="modal-content">
-//               <h4>Add to Inventory</h4>
-//               {inevetory.map((prop, key) => {
-//                 return (
-//                   <div className="row">
-//                     <form id="add-item-form" class="col s12">
-//                       <div className="row">
-//                         <div className="input-field col s6">
-//                           <input
-//                             placeholder="Item Name"
-//                             id={key}
-//                             type="text"
-//                             className="validate"
-//                           />
-//                           <label for="item_name"></label>
-//                         </div>
-//                       </div>
-//                     </form>
-//                   </div>
-//                 );
-//               })}
-//               {/* </div>}
-//                                 <div className="row">
-//                                     <div className="input-field col s6">
-//                                     <input
-//                                         placeholder="Amount in Stock"
-//                                         id="currentStock"
-//                                         type="text"
-//                                             className="validate"
-//                                     />
-//                                     <label for="currentStock"></label>
-//                                 </div>
-//                             </div>
-//                                 <div className="row">
-//                                     <div className="input-field col s6">
-//                                     <input
-//                                         placeholder="Image Link"
-//                                         id="imageLink"
-//                                         type="text"
-//                                             className="validate"
-//                                     />
-//                                     <label for="imageLink"></label>
-//                                 </div>
-//                             </div>
-//                                 <div className="row">
-//                                     <div className="input-field col s6">
-//                                     <input
-//                                         placeholder="Order Link"
-//                                         id="orderLink"
-//                                         type="text"
-//                                         className="validate"
-//                                     />
-//                                     <label for="orderLink"></label>
-//                                 </div>
-//                             </div>
-//                                 <div className="row">
-//                                     <div className="input-field col s6">
-//                                     <input
-//                                         placeholder="Price"
-//                                         id="price"
-//                                         type="text"
-//                                             className="validate"
-//                                     />
-//                                     <label for="price"></label>
-//                                         <div className="modal-footer">
-//                                         <button
-//                                                 className="addbtn modal-close waves-effect waves-light btn-large"
-//                                             href="#!">
-//                                         Add Item
-//                                         </button>
-//                                     </div>
-//                                 </div>
-//                             </div> */}
-//             </div>
-//           </div>
-
-//           <div id="modalUpdateInv" className="modal">
-//             <div className="modal-content">
-//               <h4>Update Item</h4>
-//               <div className="row">
-//                 <form id="update-item-form" className="col s12">
-//                   <div className="row">
-//                     <div className="input-field col s6">
-//                       <input
-//                         placeholder="Item Name"
-//                         id="itemNameUpdate"
-//                         type="text"
-//                         className="validate"
-//                       />
-//                       <label for="itemNameUpdate"></label>
-//                     </div>
-//                   </div>
-//                   <div className="row">
-//                     <div className="input-field col s6">
-//                       <input
-//                         placeholder="Amount in Stock"
-//                         id="currentStockUpdate"
-//                         type="text"
-//                         className="validate"
-//                       />
-//                       <label for="currentStockUpdate"></label>
-//                     </div>
-//                   </div>
-//                   <div className="row">
-//                     <div className="input-field col s6">
-//                       <input
-//                         placeholder="Image Link"
-//                         id="imageLinkUpdate"
-//                         type="text"
-//                         className="validate"
-//                       />
-//                       <label for="imageLinkUpdate"></label>
-//                     </div>
-//                   </div>
-//                   <div className="row">
-//                     <div className="input-field col s6">
-//                       <input
-//                         placeholder="Order Link"
-//                         id="orderLinkUpdate"
-//                         type="text"
-//                         className="validate"
-//                       />
-//                       <label for="orderLinkUpdate"></label>
-//                     </div>
-//                   </div>
-//                   <div className="row">
-//                     <div className="input-field col s6">
-//                       <input
-//                         placeholder="Price"
-//                         id="priceUpdate"
-//                         type="text"
-//                         className="validate"
-//                       />
-//                       <label for="priceUpdate"></label>
-//                       <div className="modal-footer">
-//                         <button
-//                           className="addbtn modal-close waves-effect waves-light btn-large"
-//                           href="#!"
-//                         >
-//                           Update Item
-//                         </button>
-//                       </div>
-//                     </div>
-//                   </div>
-//                 </form>
-//               </div>
-//             </div>
-//           </div>
-
-//           <table className="highlight">
-//             <thead>
-//               <tr>
-//                 <th>Item Name</th>
-//                 <th>Amount in Stock</th>
-//                 <th>Price</th>
-//               </tr>
-//             </thead>
-
-//             <tbody>{}</tbody>
-//           </table>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+            <tbody>{}</tbody>
+          </table>
+        </div>
+      </div>
+      </>
+  );
+}

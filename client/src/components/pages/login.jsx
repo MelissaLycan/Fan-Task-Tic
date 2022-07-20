@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Button from "react-bootstrap/Button";
@@ -14,9 +14,10 @@ const Login = (props) => {
     email: "",
     password: "",
   });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error, data }] = useMutation(LOGIN_USER)
+  console.log(error);
   let [authMode, setAuthMode] = useState("signin");
-
+  console.log(data)
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
   };

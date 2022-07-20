@@ -93,7 +93,7 @@ const MerchImages = [
   },
 ];
 
-function Merch() {
+export function Merch() {
   return (
     <section className="App-header">
       <Container id="projects-area">
