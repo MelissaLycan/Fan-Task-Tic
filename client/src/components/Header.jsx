@@ -1,75 +1,3 @@
-// import React, { useState } from "react";
-// import { Route, Link, Outlet } from "react-router-dom";
-// import "./Header.css";
-
-// import Login from ".//pages/login";
-
-// function Header() {
-//   if (sessionStorage.getItem("status") != null) {
-//     // DB query to find relevant info
-//     return (
-//       <nav className="navbar nuStyle sticky-top w-50">
-//         <div className="container d-inline-flex w-100">
-//           <div className="row align-items-center justify-content-evenly">
-
-//             <p className="col align-self-center">Placeholder</p>
-//             <Link to="/Band/:bandId" className="col align-self-center">
-//               <img
-//                 className="bandImage"
-//                 src="images/nordic_druid.jpg"
-//                 alt="Band Nordic Daughter"
-//               ></img>
-//             </Link>
-//             <p className="col align-self-center">Profile</p>
-//             <a className="col align-self-center" href="#">
-//               <img className="userImage" src="Placeholder" alt="User"></img>
-//             </a>
-//           </div>
-//         </div>
-//       </nav>
-//     );
-//   } else {
-//     // DB query to find random band and pull relevant info
-//     return (
-//       <nav className="navbar nuStyle sticky-top w-50 d-flex">
-//         <div className="flex-row w-100">
-//           <div className="row align-items-center justify-content-evenly">
-//             <svg
-//               xmlns="http://www.w3.org/2000/svg"
-//               width="16"
-//               height="16"
-//               fill="currentColor"
-//               className="bi bi-heart-pulse-fill col"
-//               viewBox="0 0 16 16"
-//             >
-//               <path
-//                 fillRule="evenodd"
-//                 d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9H1.475ZM.879 8C-2.426 1.68 4.41-2 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.88Z"
-//               />
-//             </svg>
-//             <p className="col align-self-center">???</p>
-//             <Link to="/Band/:bandId" className="col align-self-center">
-//               <img
-//                 className="bandImage"
-//                 src="/images/ND With Name 640x640.png"
-//                 alt="Band Image"
-//               ></img>
-//             </Link>
-//             <p className="col align-self-center">Profile</p>
-//             <a className="col align-self-center" href="#">
-//               <img
-//                 className="userImage"
-//                 src="Placeholder"
-//                 alt="User Image"
-//               ></img>
-//             </a>
-//           </div>
-//         </div>
-//       </nav>
-//     );
-//   }
-// }
-// export default Header;
 import React, { useState } from "react";
 import { Route, Link, Outlet } from "react-router-dom";
 
@@ -97,10 +25,10 @@ function OffcanvasExample() {
             <Navbar.Brand href="/" className="headContent">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="4rem"
+                height="4rem"
                 fill="currentColor"
-                className="bi bi-heart-pulse-fill col"
+                className="bi bi-heart-pulse-fill col headContent"
                 viewBox="0 0 16 16"
               >
                 <path
