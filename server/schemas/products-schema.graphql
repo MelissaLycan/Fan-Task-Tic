@@ -1,0 +1,4 @@
+$ APOLLO_KEY=service:FanTaskTic:•••••••••••••••••••••• \
+  rover subgraph publish FanTaskTic@current \
+  --name products --schema ./products-schema.graphql \
+  --routing-url http://products.prod.svc.cluster.local:4001/graphql
