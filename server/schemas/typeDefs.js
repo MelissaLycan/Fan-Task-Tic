@@ -10,7 +10,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    bandMember: [BandInfo]!
+    bandMember: [BandInfo]
     orders: [Order]!
     actions: [Actions]!
   }
@@ -21,9 +21,24 @@ const typeDefs = gql`
     website: String
     spotify: String
     bandsintown: String
-    members: [String]
-    socialLinks: [String]
+    members: [Member]
+    socialLinks: Socials
     inventory: [Item]
+  }
+
+  type Member {
+    _id: ID
+    name: String
+    instrument: String
+    image: String
+  }
+
+  type Socials {
+    facebook: String
+    instagram: String
+    tiktok: String
+    twitter: String
+    youtube: String
   }
 
   type Order {
@@ -57,8 +72,12 @@ const typeDefs = gql`
   }
 
   type Auth {
-    token: ID
+    token: ID!
     user: User
+  }
+
+  type Checkout {
+    session: ID
   }
 
   type Query {
@@ -66,24 +85,24 @@ const typeDefs = gql`
     user(username: String!): User
     categories: [Category]
     allBands: [BandInfo]
-    band(bandName: String!): BandInfo
+    band(_id: ID!): BandInfo
     allItems: [Item]
-    item(name: String!): Item
+    item(_id: ID!): Item
     order(order_id: ID): Order
     checkout(products: [ID]!): Checkout
+    me: User
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
 
-    addUser(username: String!, email:String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
 
     addOrder(products: [ID]!): Order
 
-    updateUser(firstName: String!, lastName: String!, email: String!, password: String!): User
-    
-    updateItem(_id: ID!, current_stock: Int!): Item
+    updateUser(username: String!, email: String!, password: String!): User
 
+    updateItem(_id: ID!, current_stock: Int!): Item
   }
 `;
 module.exports = typeDefs;

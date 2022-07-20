@@ -5,7 +5,7 @@ const bandSeeds = require("./bandSeeds.json");
 const itemSeeds = require("./itemSeeds.json");
 
 function getObj(item, index, input) {
-  input[index] = item;
+  input[index] = item._id;
 }
 
 db.once("open", async () => {
@@ -19,20 +19,21 @@ db.once("open", async () => {
     await User.create(userSeeds);
     const allBands = await BandInfo.find({});
 
-    allItems.forEach(getObj);
+    // allItems.forEach(getObj);
+
     await BandInfo.findOneAndUpdate(
       { bandName: "nordicdaughter" },
       { $push: { inventory: allItems } },
       { returnNewDocument: true }
     );
     console.log(allItems);
-    allBands.forEach(getObj);
+    // allBands.forEach(getObj);
     await User.findOneAndUpdate(
       { username: "MelissaLycan" },
       { $push: { bandMember: allBands } },
       { returnNewDocument: true }
     );
-    console.log(...allBands);
+    console.log(allBands);
 
     console.log("all done!");
     process.exit(0);

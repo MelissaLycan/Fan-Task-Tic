@@ -21,7 +21,8 @@
     "graphql-type-decimal": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.8.0",
-    "mongoose": "^5.9.10"
+    "mongoose": "^5.9.10",
+    "stripe": "^9.14.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"

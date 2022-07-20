@@ -8,36 +8,36 @@
     "bandMember": []
   },
   {
-    "first_name": "Joel",
-    "last_name": "Rogers",
+    "firstname": "Joel",
+    "lastname": "Rogers",
     "email": "jdr.personal@yahoo.com",
     "username": "JoelRogers",
     "password": "password"
   },
   {
-    "first_name": "Sheri",
-    "last_name": "Brown",
+    "firstname": "Sheri",
+    "lastname": "Brown",
     "email": "Sheri@none.net",
     "username": "SheriBrown",
     "password": "password"
   },
   {
-    "first_name": "Wren",
-    "last_name": "Sanchez",
+    "firstname": "Wren",
+    "lastname": "Sanchez",
     "email": "wrensanchez@gmail.com",
     "username": "WrenSanchez",
     "password": "password"
   },
   {
-    "first_name": "Keith",
-    "last_name": "MacNeil",
-    "email": "riverbatrock@gmail.com",
+    "firstname": "Keith",
+    "lastname": "MacNeil",
+    "email": "Riverbatrock@gmail.com",
     "username": "Kmac5000",
     "password": "password"
   },
   {
-    "first_name": "Ben",
-    "last_name": "Machock",
+    "firstname": "Ben",
+    "lastname": "Machock",
     "email": "bmacho@none.net",
     "username": "Bmacho",
     "password": "password"
